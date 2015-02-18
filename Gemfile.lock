@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/snow/better_logging.git
+  revision: ac2a741fe1747e9d833e09656fcfb250c0777575
+  specs:
+    better_logging (1.0.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -208,6 +214,7 @@ PLATFORMS
 DEPENDENCIES
   angularjs-rails
   awesome_print
+  better_logging!
   bourbon
   capistrano-rails
   coffee-rails (~> 4.0.0)

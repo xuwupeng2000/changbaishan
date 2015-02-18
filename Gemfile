@@ -29,6 +29,7 @@ gem 'neat'
 gem 'email_validator'
 
 group :development, :test do
+  gem 'better_logging', github: 'snow/better_logging'
   gem 'spring'
   gem 'capistrano-rails', group: :development
   gem 'pry-rails'
