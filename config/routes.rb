@@ -77,6 +77,7 @@ Rails.application.routes.draw do
   end
 
   get 'dashboard' => 'dashboard#index', as: 'dashboard'
+  get 'routes'    => 'sextant/routes#index'
 
   root :to => "dashboard#index"
 end
