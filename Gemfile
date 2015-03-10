@@ -27,6 +27,9 @@ gem "simple_form"
 gem "haml"
 gem "notify"
 
+# Security
+gem 'secure_headers'
+
 # Validation
 gem 'email_validator'
 

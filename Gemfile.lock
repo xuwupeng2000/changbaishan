@@ -166,6 +166,7 @@ GEM
       sass (~> 3.2.2)
       sprockets (~> 2.8, < 3.0)
       sprockets-rails (~> 2.0)
+    secure_headers (2.0.0)
     sextant (0.2.4)
       rails (>= 3.2)
     shoulda-matchers (2.8.0)
@@ -232,6 +233,7 @@ DEPENDENCIES
   rolify
   rspec-rails
   sass-rails (~> 4.0.3)
+  secure_headers
   sextant
   shoulda-matchers
   simple_form
