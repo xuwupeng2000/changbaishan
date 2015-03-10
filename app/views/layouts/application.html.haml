@@ -3,12 +3,12 @@
   %head
     %meta{charset: 'utf-8'}
     %meta{name: "viewport", content: "width=device-width, initial-scale=1.0"}
-    %title= ( html_title || 'qBit' )
+    %title= ( html_title || 'qBit Development' )
     = stylesheet_link_tag 'application', :media => "all"
     = include_gon
     = javascript_include_tag "application"
     = favicon_link_tag 'favicon.ico'
     = csrf_meta_tags
-    
+
   %body{ class: 'container' }
     = yield

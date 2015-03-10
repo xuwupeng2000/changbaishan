@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -54,4 +53,30 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  #
+
+  # Routes for devise login logoff etc.
+  devise_for :users
+
+  # Some default routes prepared for JS request
+  resources :products,    only: [:index, :update, :create, :destroy]
+
+  resources :customers,   only: [:index, :update, :create, :destroy] do
+    resources :preferences, only: [:index, :update, :create, :destroy]
+    resources :contacts,    only: [:index, :update, :create, :destroy]
+  end
+
+  resources :orders,      only: [:index, :update, :create, :destroy] do
+    resources :sub_orders,  only: [:index, :update, :create, :destroy]
+    resources :deliverable, only: [:index, :update, :create, :destroy]
+  end
+
+  # Namespace for admin
+  namespace :admin do
+    resources :users, only: [:index, :create]
+  end
+
+  get 'dashboard' => 'dashboard#index', as: 'dashboard'
+
+  root :to => "dashboard#index"
 end

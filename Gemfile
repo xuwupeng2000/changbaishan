@@ -19,11 +19,10 @@ gem "pundit"
 
 # View
 gem 'sass-rails', '~> 4.0.3'
+gem 'bootstrap-sass', '~> 3.3.3'
 gem "simple_form"
 gem "haml"
 gem "notify"
-gem 'bourbon'
-gem 'neat'
 
 # Validation
 gem 'email_validator'
