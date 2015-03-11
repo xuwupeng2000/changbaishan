@@ -1,0 +1,17 @@
+@import './configs/_colors';
+
+.divider {
+  border-top: 1px solid $divider_gray;
+  margin: 0;
+}
+
+.outline {
+  border-bottom: 1px dotted $white_smoke;
+  font-size: 14px;
+  margin: 0 0 15px;
+  padding: 0 0 10px;
+}
+
+.clearfix {
+  margin-top: 80px;
+}

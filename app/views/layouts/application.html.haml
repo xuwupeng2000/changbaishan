@@ -10,5 +10,26 @@
     = favicon_link_tag 'favicon.ico'
     = csrf_meta_tags
 
-  %body{ class: 'container' }
-    = yield
+  %body
+    = render partial: "/shared/topnav"
+    .clearfix
+
+    .main
+      .container
+        = yield
+
+    %footer.footer
+      .bottom-links
+        .container
+          .row
+            .col-sm-6.outline
+              %h5
+                About DGB
+            .col-sm-6.outline
+              %h5
+                Follow Us
+      %hr.divider
+        .container
+          .row
+            .col-sm-6
+              © 2015 qBit, All Rights Reserved.

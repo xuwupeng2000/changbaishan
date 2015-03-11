@@ -1,0 +1,62 @@
+@import './configs/_colors';
+
+.navbar-custom {
+  background-color: rgba(10, 10, 10, 0.9);
+  border: 0 none;
+  border-radius: 0;
+  font-family: "Roboto Condensed",sans-serif;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  z-index: 1000;
+  color: white;
+}
+
+.topnav {
+  display: block;
+}
+
+.navbar-nav li a {
+  color: white;
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+  color: $dark_gray;
+}
+
+.navbar-custom .dropdown-toggle::after {
+  content: "";
+  display: block;
+  font: 9px/1 FontAwesome;
+  margin-top: -6px;
+  position: absolute;
+  right: 0;
+  text-rendering: auto;
+  top: 50%;
+}
+
+.navbar-custom .dropdown-menu {
+  background: none repeat scroll 0 0 rgba(26, 26, 26, 0.9);
+  border: 0 none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+}
+
+.navbar-custom .dropdown-menu > li > a {
+  font-size: 12px;
+  letter-spacing: 2px;
+  padding: 11px 15px;
+}
+
+.navbar-header a {
+  color: white;
+  font-size: 18px;
+  left: 5%;
+  position: absolute;
+  top: 30%;
+
+  :hover {
+    text-decoration: none;
+  }
+}

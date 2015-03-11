@@ -59,14 +59,14 @@ Rails.application.routes.draw do
   devise_for :users
 
   # Some default routes prepared for JS request
-  resources :products,    only: [:index, :update, :create, :destroy]
+  resources :products
 
-  resources :customers,   only: [:index, :update, :create, :destroy] do
+  resources :customers do
     resources :preferences, only: [:index, :update, :create, :destroy]
     resources :contacts,    only: [:index, :update, :create, :destroy]
   end
 
-  resources :orders,      only: [:index, :update, :create, :destroy] do
+  resources :orders do
     resources :sub_orders,  only: [:index, :update, :create, :destroy]
     resources :deliverable, only: [:index, :update, :create, :destroy]
   end

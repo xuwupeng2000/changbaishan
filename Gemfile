@@ -26,12 +26,14 @@ gem 'bootstrap-sass', '~> 3.3.3'
 gem "simple_form"
 gem "haml"
 gem "notify"
+gem 'font-awesome-sass', '~> 4.3.0'
 
 # Security
 gem 'secure_headers'
 
 # Validation
 gem 'email_validator'
+
 
 group :development, :test do
   gem 'spring'
