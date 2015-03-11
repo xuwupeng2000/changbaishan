@@ -45,4 +45,5 @@ group :development, :test do
   gem 'faker'
   gem 'awesome_print'
   gem 'sextant'
+  gem 'quiet_assets'
 end

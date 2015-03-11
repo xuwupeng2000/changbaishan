@@ -76,8 +76,6 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :create]
   end
 
-  get 'login'     => 'devise/sessions#new', as: 'login'
-
   get 'dashboard' => 'dashboard#index', as: 'dashboard'
   get 'routes'    => 'sextant/routes#index'
 
