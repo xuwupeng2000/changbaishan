@@ -1,3 +1,5 @@
+@import './configs/_colors';
+
 input {
   display: block;
   max-width: 388px;
@@ -11,3 +13,7 @@ label {
   margin-left: 15px;
 }
 
+
+span.error {
+  color: $flash-red;
+}

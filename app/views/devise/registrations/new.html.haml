@@ -1,9 +1,9 @@
 %h Sign up
 
-= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+= simple_form_for(resource, as: resource_name, url: registration_path(resource_name) ) do |f|
   = f.error_notification
 
-  .form-inputs
+  .form-inputs.form-horizontal
     = f.input :first_name, autofocus: true
     = f.input :last_name
     = f.input :email

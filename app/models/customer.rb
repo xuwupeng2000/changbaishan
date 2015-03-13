@@ -1,7 +1,7 @@
 class Customer < ActiveRecord::Base
   belongs_to :user
   has_many :preference
-  has_many :contact
+  has_many :customer_contact
 
   attr_accessor :name, :address
 

@@ -1,4 +1,4 @@
-class UpstreamContact < ActiveRecord::Base
+class Upstream::Contact < ActiveRecord::Base
   belongs_to :upstream
 
   attr_accessor :name, :detail

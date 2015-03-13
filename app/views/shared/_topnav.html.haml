@@ -1,26 +1,38 @@
 %nav.topnav.navbar.navbar-custom.navbar-fixed-top.navbar-transparent
   .navbar-header
-    = link_to 'DGB', root_path
 
   .container
     %ul.nav.navbar-nav
+      %li.nav-tab{class: (params[:controller] =~ /dashboard/ ? 'active' : nil)}
+        = link_to('Home', root_path, class: '')
+
       %li.dropdown.nav-tab{class: (params[:controller] =~ /order/ ? 'active' : nil)}
         %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
           Order
         %ul.dropdown-menu
-          %li.dropdown-entry= link_to "New Orders", orders_path
-          %li.dropdown-entry= link_to "List of Orders", new_order_path
+          %li.dropdown-entry= link_to "New Orders", new_order_path
+          %li.dropdown-entry= link_to "List of Orders", orders_path
 
-      %li.dropdown.nav-tab{class: (params[:controller] =~ /product/ ? 'active' : nil)}
+      %li.dropdown.nav-tab{class: (params[:controller] =~ /good/ ? 'active' : nil)}
         %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
           Product
         %ul.dropdown-menu
-          %li.dropdown-entry= link_to "New Products", products_path
-          %li.dropdown-entry= link_to "Products Overview", new_product_path
+          %li.dropdown-entry= link_to "New Products", new_good_path
+          %li.dropdown-entry= link_to "Products Overview", goods_path
 
       %li.dropdown.nav-tab{class: (params[:controller] =~ /customer/ ? 'active' : nil)}
         %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
           Customer
         %ul.dropdown-menu
-          %li.dropdown-entry= link_to "New Customer", customers_path
-          %li.dropdown-entry= link_to "List of Customers", new_customer_path
+          %li.dropdown-entry= link_to "New Customer", new_customer_path
+          %li.dropdown-entry= link_to "List of Customers", customers_path
+
+    %ul.nav.navbar-nav.profile-menu
+      - if current_user
+        %li.nav-tab
+          = link_to "Log Off", destroy_user_session_path, method: :delete
+      - else
+        %li.nav-tab
+          = link_to "Sign Up", new_user_registration_path
+        %li.nav-tab
+          = link_to "Log In",  new_user_session_path
