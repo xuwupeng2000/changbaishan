@@ -12,8 +12,13 @@ class User < ActiveRecord::Base
   has_many :customer
   has_many :order
 
-  attr_accessor :email, :name
+  attr_accessor :email, :first_name, :last_name
 
   validates_presence_of :email, :first_name, :last_name
   validates_uniqueness_of :email, case_sensitive: true
+
+
+  def name
+    name = [first_name, last_name].join(' ')
+  end
 end

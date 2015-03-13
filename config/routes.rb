@@ -58,6 +58,8 @@ Rails.application.routes.draw do
   # Routes for devise login logoff etc.
   devise_for :users
 
+  get 'admin', to: 'admin/users#index'
+
   # Some default routes prepared for JS request
   resources :products
 
@@ -73,11 +75,14 @@ Rails.application.routes.draw do
 
   # Namespace for admin
   namespace :admin do
-    resources :users, only: [:index, :create]
+    resources :users, only: [:index, :create, :update]
+    resources :costomers, only: [:index, :create, :update]
+    resources :products, only: [:index, :create, :update]
   end
 
   get 'dashboard' => 'dashboard#index', as: 'dashboard'
   get 'routes'    => 'sextant/routes#index'
 
   root :to => "dashboard#index"
+
 end

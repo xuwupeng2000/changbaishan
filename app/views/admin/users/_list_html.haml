@@ -1,0 +1,28 @@
+= smart_listing_controls_for(:users) do
+  .filter.input-append
+    = text_field_tag :filter, '', class: "search", placeholder: "Type name here", autocomplete: "off"
+    %button.btn.disabled{type: "submit"}
+      %i.icon.icon-search
+
+- unless smart_listing.empty?
+  %table.table.table-striped.table-bordered
+    %thead
+      %th= smart_listing.sortable "First Name", :first_name
+      %th= smart_listing.sortable "Last Name", :last_name
+      %th= smart_listing.sortable "Email", :email
+      %th User Last Logged In
+      %th User ID
+    %tbody
+      - smart_listing.collection.each do |user|
+        %tr
+          %td= user.first_name
+          %td= user.last_name
+          %td= user.email
+          %td= user.last_sign_in_at.try(:strftime, "%d %b %Y %l:%M %p")
+          %td= user.id
+
+  .pagination
+    = smart_listing.paginate
+    = smart_listing.pagination_per_page_links
+- else
+  %p.warning No records!

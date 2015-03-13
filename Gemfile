@@ -34,6 +34,8 @@ gem 'secure_headers'
 # Validation
 gem 'email_validator'
 
+gem 'smart_listing'
+
 group :development, :test do
   gem 'spring'
   gem 'capistrano-rails', group: :development
