@@ -1,4 +1,4 @@
-%nav.topnav.navbar.navbar-custom.navbar-fixed-top.navbar-transparent
+%nav.topnav.navbar.navbar-custom.navbar-transparent
   .navbar-header
 
   .container
@@ -27,8 +27,18 @@
           %li.dropdown-entry= link_to "New Customer", new_customer_path
           %li.dropdown-entry= link_to "List of Customers", customers_path
 
+      %li.dropdown.nav-tab{class: (params[:controller] =~ /admin/ ? 'active' : nil)}
+        %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+          Admin
+        %ul.dropdown-menu
+          %li.dropdown-entry= link_to "Manage Customer", admin_customers_path
+          %li.dropdown-entry= link_to "Manage Product", admin_products_path
+          %li.dropdown-entry= link_to "Manage User", admin_users_path
+
     %ul.nav.navbar-nav.profile-menu
       - if current_user
+        %li.nav-tab
+          = link_to "Profile", edit_user_registration_path
         %li.nav-tab
           = link_to "Log Off", destroy_user_session_path, method: :delete
       - else

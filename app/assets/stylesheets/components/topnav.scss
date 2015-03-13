@@ -8,7 +8,6 @@
   font-size: 12px;
   letter-spacing: 3px;
   text-transform: uppercase;
-  z-index: 1000;
   color: white;
 }
 
@@ -22,17 +21,6 @@
 
 .nav > li > a:hover, .nav > li > a:focus {
   color: $dark_gray;
-}
-
-.navbar-custom .dropdown-toggle::after {
-  content: "";
-  display: block;
-  font: 9px/1 FontAwesome;
-  margin-top: -6px;
-  position: absolute;
-  right: 0;
-  text-rendering: auto;
-  top: 50%;
 }
 
 .navbar-custom .dropdown-menu {

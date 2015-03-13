@@ -17,3 +17,89 @@ label {
 span.error {
   color: $flash-red;
 }
+
+.form-horizontal {
+  label {
+    display: inline-block;
+    min-width: 30%;
+  }
+
+  input {
+    display: inline-block;
+  }
+
+  input[type='text'] {
+    min-width: 50%;
+    max-width: 88%
+  }
+
+  input[type='email'] {
+    min-width: 50%;
+    max-width: 88%
+  }
+
+  input[type='password'] {
+    min-width: 50%;
+    max-width: 88%
+  }
+
+  .hint {
+    margin-left: 31%;
+    color: $light-gray;
+  }
+
+}
+
+.form-vertical {
+  input[type='text'] {
+    min-width: 88%;
+  }
+
+  input#user_remember_me {
+    float: left;
+    min-width: unset;
+    margin-right: 12px;
+  }
+
+}
+
+.devise-shared-links {
+  min-height: 288px;
+  padding: 12px;
+}
+
+.search-inline-form {
+  float: right;
+  margin-bottom: 24px;
+
+  label {
+    display:inline-block;
+  }
+
+  input {
+    display:inline-block;
+    min-width: 266px;
+  }
+}
+
+.btn {
+  -moz-user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.42857;
+  margin-bottom: 0;
+  padding: 3px 12px;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  border-color: $figured-deep-blue;
+  color: white;
+}

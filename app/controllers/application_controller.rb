@@ -7,8 +7,10 @@ class ApplicationController < ActionController::Base
 
   ensure_security_headers
 
-  def authenticate_user!
+  def authenticate_user
+    return if current_user
+
     flash[:error] = 'Log in please.'
-    redirect_to new_user_session_path unless current_user
+    redirect_to new_user_session_path
   end
 end
