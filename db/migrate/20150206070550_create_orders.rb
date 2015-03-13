@@ -3,7 +3,6 @@ class CreateOrders < ActiveRecord::Migration
     create_table :orders do |t|
       t.references :user
       t.references :customer
-      t.references :deliverable
       t.date :placed_at
       t.string :code
       t.timestamps

@@ -45,4 +45,5 @@ group :development, :test do
   gem 'awesome_print'
   gem 'sextant'
   gem 'quiet_assets'
+  gem "rails-erd"
 end
