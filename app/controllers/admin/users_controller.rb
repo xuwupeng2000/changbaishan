@@ -30,7 +30,7 @@ class Admin::UsersController <  Admin::BaseController
     @user = User.find(params[:id])
     @user.disable
 
-    flash[:sccess] = 'User has been archived'
+    flash[:success] = 'User has been archived'
     redirect_to admin_users_path
   end
 
@@ -38,7 +38,7 @@ class Admin::UsersController <  Admin::BaseController
     @user = User.find(params[:id])
     @user.enable
 
-    flash[:sccess] = 'User has been enabled (active)'
+    flash[:success] = 'User has been enabled (active)'
     redirect_to admin_users_path
   end
 
