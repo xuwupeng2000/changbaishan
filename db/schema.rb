@@ -16,10 +16,10 @@ ActiveRecord::Schema.define(version: 20150313022655) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "contacts", force: true do |t|
+  create_table "customer_contacts", force: true do |t|
     t.integer  "customer_id"
     t.string   "name"
-    t.string   "string"
+    t.string   "detail"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -34,8 +34,11 @@ ActiveRecord::Schema.define(version: 20150313022655) do
 
   create_table "deliverables", force: true do |t|
     t.integer  "order_id"
+    t.string   "name"
+    t.string   "kind"
     t.decimal  "cost"
     t.string   "address"
+    t.string   "state"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -57,16 +60,18 @@ ActiveRecord::Schema.define(version: 20150313022655) do
   create_table "orders", force: true do |t|
     t.integer  "user_id"
     t.integer  "customer_id"
-    t.integer  "deliverable_id"
     t.date     "placed_at"
     t.string   "code"
+    t.string   "state"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "preferences", force: true do |t|
     t.integer  "customer_id"
-    t.decimal  "margin"
+    t.decimal  "profit_margin"
+    t.decimal  "profit_per_item"
+    t.string   "state"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -78,9 +83,12 @@ ActiveRecord::Schema.define(version: 20150313022655) do
 
   create_table "products", force: true do |t|
     t.integer  "user_id"
+    t.integer  "product_category_id"
     t.string   "name"
-    t.decimal  "cost"
     t.text     "description"
+    t.decimal  "weight"
+    t.boolean  "is_public",           default: false
+    t.string   "state"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -98,7 +106,7 @@ ActiveRecord::Schema.define(version: 20150313022655) do
 
   create_table "sub_orders", force: true do |t|
     t.integer  "order_id"
-    t.integer  "product_id"
+    t.integer  "good_id"
     t.integer  "quantity"
     t.decimal  "value"
     t.datetime "created_at"
@@ -121,7 +129,10 @@ ActiveRecord::Schema.define(version: 20150313022655) do
   create_table "users", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
+    t.string   "gender"
+    t.string   "age"
     t.string   "email"
+    t.string   "state"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "encrypted_password",     default: "", null: false

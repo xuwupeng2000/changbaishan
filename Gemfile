@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'unicorn'
-gem 'rails', '4.1.5'
+gem 'rails', '4.1.9'
 gem 'pg'
 
 # JSON
@@ -42,6 +42,9 @@ gem "squeel"
 
 # Index magic
 gem 'smart_listing'
+
+# State machine
+gem 'state_machine'
 
 group :development, :test do
   gem 'mailcatcher'

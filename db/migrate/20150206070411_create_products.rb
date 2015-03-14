@@ -7,6 +7,7 @@ class CreateProducts < ActiveRecord::Migration
       t.text :description
       t.decimal :weight
       t.boolean :is_public , default: false
+      t.string :state
       t.timestamps
     end
   end
