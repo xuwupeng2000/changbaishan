@@ -1,8 +1,8 @@
 class Admin::UsersController <  Admin::BaseController
 
   def index
-    if params[:filter]
-      key_word = params[:filter]
+    unless params[:filter].blank?
+      key_word = "%#{ params[:filter] }%"
       scope = User.where{( first_name.like key_word ) | ( last_name.like key_word ) | ( email.like key_word ) | ( id == key_word )}
     else
       scope = User.all
@@ -20,6 +20,10 @@ class Admin::UsersController <  Admin::BaseController
   # Pending feature
   def create
 
+  end
+
+  def show
+    @user = User.find(params[:id])
   end
 
   private

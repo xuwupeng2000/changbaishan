@@ -24,6 +24,7 @@
           %td
             %a.btn.btn-primary{:type => 'button', :'data-toggle' => 'modal', 'data-target' => "#modal-edit-user-#{user.id}"}
               Edit
+            = link_to 'Detail', admin_user_path(user), class: 'btn btn-primary'
             = render partial: "admin/users/modals/edit", locals: {user: user}
 
 
@@ -31,4 +32,7 @@
     = smart_listing.paginate
     = smart_listing.pagination_per_page_links
 - else
-  %p.warning No records!
+
+  .clearfix
+
+  %p.warning.sl-no-record No records!

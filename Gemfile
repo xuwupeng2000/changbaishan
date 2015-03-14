@@ -15,6 +15,9 @@ gem 'angularjs-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 
+gem 'turbolinks'
+gem 'jquery-turbolinks'
+
 # Auth
 gem 'devise'
 gem "rolify"
@@ -49,4 +52,5 @@ group :development, :test do
   gem 'sextant'
   gem 'quiet_assets'
   gem "rails-erd"
+  gem "bullet"
 end
