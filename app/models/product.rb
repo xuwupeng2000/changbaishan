@@ -5,12 +5,12 @@ class Product < ActiveRecord::Base
   validates_presence_of :user, :name, :product_category
 
   state_machine :state, :initial => :active do
-    event :enable do
+    event :activate do
         transition all => :active
     end
 
-    event :disable do
-      transition all => :off
+    event :archive do
+      transition all => :archived
     end
   end
 end

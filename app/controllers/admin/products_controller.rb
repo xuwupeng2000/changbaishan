@@ -26,7 +26,7 @@ class Admin::ProductsController <  Admin::BaseController
     @product.user_id = current_user.id
 
     if @product.save
-      flash[:usccess] = 'Product has been created successfully'
+      flash[:sccess] = 'Product has been created successfully'
       redirect_to admin_products_path
     else
       render :new
@@ -43,6 +43,22 @@ class Admin::ProductsController <  Admin::BaseController
 
   def destroy
 
+  end
+
+  def archive
+    @product = Product.find(params[:id])
+    @product.archive
+
+    flash[:sccess] = 'Product has been archived'
+    redirect_to admin_products_path
+  end
+
+  def activate
+    @product = Product.find(params[:id])
+    @product.activate
+
+    flash[:sccess] = 'Product has been enabled (active)'
+    redirect_to admin_products_path
   end
 
   private

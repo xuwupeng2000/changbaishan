@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
     end
 
     event :disable do
-      transition all => :off
+      transition all => :disabled
     end
   end
 end

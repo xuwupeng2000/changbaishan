@@ -79,9 +79,19 @@ Rails.application.routes.draw do
 
   # Namespace for admin
   namespace :admin do
-    resources :users, only: [:index, :create, :update, :show]
+    resources :users, only: [:index, :create, :update, :show] do
+      member do
+        put :disable
+        put :enable
+      end
+    end
     resources :customers, only: [:index]
-    resources :products, only: [:index, :create, :update, :new, :edit, :destroy]
+    resources :products, only: [:index, :create, :update, :new, :edit, :destroy] do
+      member do
+        put :archive
+        put :activate
+      end
+    end
   end
 
   get 'dashboard' => 'dashboard#index', as: 'dashboard'

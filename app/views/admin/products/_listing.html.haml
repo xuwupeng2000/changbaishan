@@ -15,6 +15,7 @@
       %th= smart_listing.sortable "Weight", :weight
       %th= smart_listing.sortable "Product Category", :category
       %th= smart_listing.sortable "Is Public Product ?", :is_public
+      %th= smart_listing.sortable "Product Status", :state
       %th Actions
     %tbody
       - smart_listing.collection.each do |prod|
@@ -24,8 +25,13 @@
           %td= prod.weight
           %td= prod.product_category.name
           %td.is-boolean= prod.is_public
+          %td.is-state= prod.state
           %td
             = link_to 'Edit', edit_admin_product_path(prod), class: 'btn btn-primary'
+            - if prod.archived?
+              = link_to 'Activate', activate_admin_product_path(prod), method: :put, class: 'btn btn-primary'
+            - else
+              = link_to 'Archive', archive_admin_product_path(prod), method: :put, class: 'btn btn-primary'
 
   .pagination
     = smart_listing.paginate
