@@ -52,4 +52,5 @@ group :development, :test do
   gem 'sextant'
   gem 'quiet_assets'
   gem "rails-erd"
+  gem "bullet"
 end

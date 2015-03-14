@@ -1,3 +1,5 @@
+@import './configs/_colors';
+
 .table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td {
   border-top: 1px solid #dddddd;
   line-height: 1.42857;
@@ -5,3 +7,12 @@
   vertical-align: top;
 }
 
+.sl-no-record.warning {
+  background: $pastel-yellow;
+  padding: 12px;
+  font-weight: bold;
+}
+
+.smart-listing.loading {
+  display: none;
+}

@@ -79,8 +79,8 @@ Rails.application.routes.draw do
 
   # Namespace for admin
   namespace :admin do
-    resources :users, only: [:index, :create, :update]
-    resources :customers, only: [:index, :create, :update]
+    resources :users, only: [:index, :create, :update, :show]
+    resources :customers, only: [:index]
     resources :products, only: [:index, :create, :update]
   end
 

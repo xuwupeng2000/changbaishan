@@ -5,10 +5,18 @@
   border: 0 none;
   border-radius: 0;
   font-family: "Roboto Condensed",sans-serif;
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: 3px;
   text-transform: uppercase;
   color: white;
+}
+
+.nav-tab.active {
+  background: white;
+}
+
+li.active.nav-tab a {
+  color: $dark_gray;
 }
 
 .topnav {
