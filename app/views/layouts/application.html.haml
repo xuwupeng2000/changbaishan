@@ -10,7 +10,10 @@
     = favicon_link_tag 'favicon.ico'
     = csrf_meta_tags
 
+    = favicon_link_tag 'dna.png'
+
   %body
+    = render partial: "/shared/flash_messages"
     = render partial: "/shared/topnav"
     .clearfix
 

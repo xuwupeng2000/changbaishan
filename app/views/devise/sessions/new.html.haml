@@ -1,13 +1,16 @@
-%h2
+%h3
   Log in
 
-= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .form-inputs
-    = f.input :email, required: true, autofocus: true
-    = f.input :password, required: true
-    = f.input :remember_me, as: :boolean
+.row
+  .col-lg-8
+    = simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'light-border form-vertical'}) do |f|
+      .form-inputs
+        = f.input :email, required: true, autofocus: true
+        = f.input :password, required: true
+        = f.input :remember_me, as: :boolean
 
-  .form-actions
-    = f.button :submit, "Log in"
+      .form-actions
+        = f.button :submit, "Log in"
 
-= render "devise/shared/links"
+  .col-lg-3
+    = render "devise/shared/links"

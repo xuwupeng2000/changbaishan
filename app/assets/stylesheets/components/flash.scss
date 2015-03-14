@@ -1,0 +1,30 @@
+@import './configs/_colors';
+
+.flash-messages {
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.flash-message {
+  margin: 0;
+  height: 26px;
+  color: white;
+  padding-top: 3px;
+  padding-left: 128px;
+}
+
+.flash-error {
+  background: $flash-red;
+}
+
+.flash-success {
+  background: $flash-green;
+}
+
+.flash-notice {
+  background: $flash-green;
+}
