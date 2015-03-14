@@ -34,6 +34,7 @@ gem 'secure_headers'
 # Validation
 gem 'email_validator'
 
+gem "squeel"
 gem 'smart_listing'
 
 group :development, :test do

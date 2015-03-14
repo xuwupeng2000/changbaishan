@@ -1,7 +1,13 @@
 class Admin::UsersController <  Admin::BaseController
 
   def index
-    @users = smart_listing_create(:users, User.all, partial: "admin/users/listing")
+    if params[:filter]
+      key_word = params[:filter]
+      scope = User.where{( first_name.like key_word ) | ( last_name.like key_word ) | ( email.like key_word ) | ( id == key_word )}
+    else
+      scope = User.all
+    end
+    @users = smart_listing_create(:users, scope, partial: "admin/users/listing")
   end
 
   def update
@@ -20,6 +26,9 @@ class Admin::UsersController <  Admin::BaseController
 
   def user_params
     params.require(:user).permit(:first_name, :last_name, :email)
+  end
+
+  def search_keyword
   end
 
 
