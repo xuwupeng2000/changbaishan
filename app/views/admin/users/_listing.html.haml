@@ -12,6 +12,7 @@
       %th= smart_listing.sortable "Email", :email
       %th User Last Logged In
       %th User ID
+      %th= smart_listing.sortable "User Status", :state
       %th Actions
     %tbody
       - smart_listing.collection.each do |user|
@@ -21,10 +22,16 @@
           %td= user.email
           %td= user.last_sign_in_at.try(:strftime, "%d %b %Y %l:%M %p")
           %td= user.id
+          %td.is-state= user.state
           %td
             %a.btn.btn-primary{:type => 'button', :'data-toggle' => 'modal', 'data-target' => "#modal-edit-user-#{user.id}"}
               Edit
             = link_to 'Detail', admin_user_path(user), class: 'btn btn-primary'
+            - if user.disabled?
+              = link_to 'Enable', enable_admin_user_path(user), method: :put, class: 'btn btn-primary'
+            - else
+              = link_to 'Disable', disable_admin_user_path(user), method: :put, class: 'btn btn-primary'
+
             = render partial: "admin/users/modals/edit", locals: {user: user}
 
 

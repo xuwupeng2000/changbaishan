@@ -16,4 +16,14 @@ class User < ActiveRecord::Base
   def name
     name = [first_name, last_name].join(' ')
   end
+
+  state_machine :state, :initial => :active do
+    event :enable do
+        transition all => :active
+    end
+
+    event :disable do
+      transition all => :disabled
+    end
+  end
 end

@@ -4,6 +4,7 @@ class CreatePreferences < ActiveRecord::Migration
       t.references :customer
       t.decimal :profit_margin
       t.decimal :profit_per_item
+      t.string  :state
       t.timestamps
     end
   end

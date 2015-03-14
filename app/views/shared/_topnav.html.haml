@@ -3,37 +3,38 @@
 
   .container
     %ul.nav.navbar-nav
-      %li.nav-tab{class: (params[:controller] =~ /dashboard/ ? 'active' : nil)}
+      %li.nav-tab{class: (params[:controller] =~ /^dashboard/ ? 'active' : nil)}
         = link_to('Home', root_path, class: '')
 
-      %li.dropdown.nav-tab{class: (params[:controller] =~ /order/ ? 'active' : nil)}
+      %li.dropdown.nav-tab{class: (params[:controller] =~ /^order/ ? 'active' : nil)}
         %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
           Order
         %ul.dropdown-menu
           %li.dropdown-entry= link_to "New Orders", new_order_path
           %li.dropdown-entry= link_to "List of Orders", orders_path
 
-      %li.dropdown.nav-tab{class: (params[:controller] =~ /good/ ? 'active' : nil)}
+      %li.dropdown.nav-tab{class: (params[:controller] =~ /^good/ ? 'active' : nil)}
         %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
           Product
         %ul.dropdown-menu
           %li.dropdown-entry= link_to "New Products", new_good_path
           %li.dropdown-entry= link_to "Products Overview", goods_path
 
-      %li.dropdown.nav-tab{class: (params[:controller] =~ /customer/ ? 'active' : nil)}
+      %li.dropdown.nav-tab{class: (params[:controller] =~ /^customer/ ? 'active' : nil)}
         %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
           Customer
         %ul.dropdown-menu
           %li.dropdown-entry= link_to "New Customer", new_customer_path
           %li.dropdown-entry= link_to "List of Customers", customers_path
 
-      %li.dropdown.nav-tab{class: (params[:controller] =~ /admin/ ? 'active' : nil)}
-        %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
-          Admin
-        %ul.dropdown-menu
-          %li.dropdown-entry= link_to "Manage Customer", admin_customers_path
-          %li.dropdown-entry= link_to "Manage Product", admin_products_path
-          %li.dropdown-entry= link_to "Manage User", admin_users_path
+      - if admin?
+        %li.dropdown.nav-tab{class: (params[:controller] =~ /admin/ ? 'active' : nil)}
+          %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+            Admin
+          %ul.dropdown-menu
+            %li.dropdown-entry= link_to "Manage Customer", admin_customers_path
+            %li.dropdown-entry= link_to "Manage Product", admin_products_path
+            %li.dropdown-entry= link_to "Manage User", admin_users_path
 
     %ul.nav.navbar-nav.profile-menu
       - if current_user

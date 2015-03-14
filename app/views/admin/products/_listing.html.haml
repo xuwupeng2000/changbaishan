@@ -1,0 +1,43 @@
+= smart_listing_controls_for(:products) do
+  .filter.input-append.search-inline-form
+    = text_field_tag :filter, '', class: "search", placeholder: "Search name, description or id here", autocomplete: "off"
+    %button.btn{type: "submit"}
+      = icon 'search'
+
+    .top-actions
+      .action= link_to 'Add new product', new_admin_product_path, class: 'btn btn-success'
+
+- unless smart_listing.empty?
+  %table.table.table-striped.table-bordered
+    %thead
+      %th Product Name
+      %th Description
+      %th= smart_listing.sortable "Weight", :weight
+      %th= smart_listing.sortable "Product Category", :category
+      %th= smart_listing.sortable "Is Public Product ?", :is_public
+      %th= smart_listing.sortable "Product Status", :state
+      %th Actions
+    %tbody
+      - smart_listing.collection.each do |prod|
+        %tr
+          %td= prod.name
+          %td= prod.description.truncate(20)
+          %td= prod.weight
+          %td= prod.product_category.name
+          %td.is-boolean= prod.is_public
+          %td.is-state= prod.state
+          %td
+            = link_to 'Edit', edit_admin_product_path(prod), class: 'btn btn-primary'
+            - if prod.archived?
+              = link_to 'Activate', activate_admin_product_path(prod), method: :put, class: 'btn btn-primary'
+            - else
+              = link_to 'Archive', archive_admin_product_path(prod), method: :put, class: 'btn btn-primary'
+
+  .pagination
+    = smart_listing.paginate
+    = smart_listing.pagination_per_page_links
+- else
+
+  .clearfix
+
+  %p.warning.sl-no-record No records!
