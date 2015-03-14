@@ -10,3 +10,12 @@
 Product::Category.where(name: 'Other').first_or_create do |cate|
   cate.name = 'Other'
 end
+
+User.where(email: "xuwupeng2000@gmail.com").first_or_create do |user|
+  user.first_name = 'Jack'
+  user.last_name = 'Wu'
+  user.email = 'xuwupeng2000@gmail.com'
+  user.password = 'daigoubao'
+end
+
+User.where(email: "xuwupeng2000@gmail.com").first.add_role :admin
