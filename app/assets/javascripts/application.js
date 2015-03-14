@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.turbolinks
+//= require turbolinks
 //= require bootstrap
 //= require smart_listing
 //= require_tree ./modules
