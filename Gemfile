@@ -37,10 +37,14 @@ gem 'secure_headers'
 # Validation
 gem 'email_validator'
 
+# ORM wrapper
 gem "squeel"
+
+# Index magic
 gem 'smart_listing'
 
 group :development, :test do
+  gem 'mailcatcher'
   gem 'spring'
   gem 'capistrano-rails', group: :development
   gem 'pry-rails'
@@ -53,4 +57,6 @@ group :development, :test do
   gem 'quiet_assets'
   gem "rails-erd"
   gem "bullet"
+  gem 'foreman'
+  gem 'thin'
 end

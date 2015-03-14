@@ -43,6 +43,11 @@ span.error {
     max-width: 88%
   }
 
+  input[type='number'] {
+    min-width: 50%;
+    max-width: 88%
+  }
+
   input[type='password'] {
     min-width: 50%;
     max-width: 88%
@@ -113,4 +118,18 @@ span.error {
 .input {
   margin: 5px;
   padding: 5px;
+}
+
+.top-actions {
+  padding: 5px;
+  marging: 5px;
+
+  .action {
+    float: right;
+  }
+}
+
+#product_description {
+  height: 266px;
+  width: 580px;
 }

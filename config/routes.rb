@@ -81,7 +81,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users, only: [:index, :create, :update, :show]
     resources :customers, only: [:index]
-    resources :products, only: [:index, :create, :update]
+    resources :products, only: [:index, :create, :update, :new, :edit, :destroy]
   end
 
   get 'dashboard' => 'dashboard#index', as: 'dashboard'

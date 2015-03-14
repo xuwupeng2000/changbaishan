@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+#
+
+Product::Category.where(name: 'Other').first_or_create do |cate|
+  cate.name = 'Other'
+end
