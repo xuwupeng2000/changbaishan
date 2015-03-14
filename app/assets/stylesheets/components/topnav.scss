@@ -60,3 +60,14 @@ li.active.nav-tab a {
 .nav-tab-right {
   float: right !important;
 }
+
+.navbar-custom .dropdown-menu > li > a {
+  font-size: 12px;
+  letter-spacing: 2px;
+  padding: 11px 15px;
+  color: white;
+
+  &:hover, &:focus {
+    color: $dark_gray;
+  }
+}
