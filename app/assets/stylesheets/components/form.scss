@@ -79,6 +79,7 @@ span.error {
 }
 
 .search-inline-form {
+  display: inline-block;
   margin-bottom: 24px;
 
   label {
@@ -121,9 +122,16 @@ span.error {
 }
 
 .top-actions {
-  padding: 5px;
-  marging: 5px;
+  display: inline-block;
+  vertical-align: bottom;
 
+  width: 100%;
+
+  padding: 5px;
+  margin: 5px;
+  .filter {
+    float: left;
+  }
   .action {
     float: right;
   }

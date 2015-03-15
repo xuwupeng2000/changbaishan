@@ -1,41 +1,33 @@
 = smart_listing_controls_for(:customers) do
-  .row
-    .col-lg-8.light-border
-      .filter.input-append.search-inline-form
-        = text_field_tag :filter, '', class: "search", placeholder: "Search name, order id, or contacts here", autocomplete: "off"
-        %button.btn{type: "submit"}
+  .top-actions
+    .filter.input-append.search-inline-form
+      = text_field_tag :filter, '', class: "search", placeholder: "Search name, address, or contacts here", autocomplete: "off"
+      %button.btn{type: "submit"}
         = icon 'search'
 
-    .col-lg-3.light-border
-      .top-actions
-        .action= link_to 'Add new product', new_admin_product_path, class: 'btn btn-success'
+    .action= link_to 'Add new customer', new_customer_path, class: 'btn btn-success'
 
 - unless smart_listing.empty?
   %table.table.table-striped.table-bordered
     %thead
       %th= smart_listing.sortable "Name", :name
       %th Address
-      %th Perferances
       %th Contacts
-      %th Recent Orders
       %th Actions
     %tbody
       - smart_listing.collection.each do |customer|
         %tr
           %td= customer.name
           %td= customer.address
-          %td= customer.perferances
           %td
-            = customer.customer_contacts do |contact|
-              %li= contact.name
-              %li= contact.detail
-          %td= customer.recent_orders
+            - customer.customer_contacts.each do |contact|
+              %li= display_customer_contact(contact)
           %td
-            WIP
+            = link_to 'Detail', customer_path(customer), class: 'btn btn-primary'
 
-  -#.pagination
-    -#= smart_listing.paginate
-    -#= smart_listing.pagination_per_page_links
+  .pagination
+    = smart_listing.paginate
+    = smart_listing.pagination_per_page_links
 - else
 
   .clearfix

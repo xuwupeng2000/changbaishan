@@ -6,12 +6,12 @@ class CustomersController < ApplicationController
 
   def index
     unless params[:filter].blank?
-      key_word = "%#{ params[:filter] }%"
-      scope = Customer.includes(:user).where{( name.like key_word ) | ( address.like key_word ) | ( id == key_word )}
+      keyword = "%#{ params[:filter] }%"
+      scope = Customer.joins(:customer_contacts).where{( name.like keyword ) | ( address.like keyword ) | ( customer_contacts.detail.like keyword )}
     else
-      scope = Customer.includes(:user).all
+      scope = Customer.includes(:customer_contacts).all
     end
-    @customers = smart_listing_create(:customers, scope, partial: "admin/customers/listing")
+    @customers = smart_listing_create(:customers, scope, partial: "customers/listing")
   end
 
   def edit
