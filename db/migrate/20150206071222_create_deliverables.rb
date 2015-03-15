@@ -8,12 +8,12 @@ class CreateDeliverables < ActiveRecord::Migration
       t.decimal :cost
       t.string :address
       t.string :state
-      t.string :code
+      t.string :tracking_number
       t.timestamps
 
     end
     add_index :deliverables, :address
     add_index :deliverables, :name
-    add_index :deliverables, :code
+    add_index :deliverables, :tracking_number
   end
 end
