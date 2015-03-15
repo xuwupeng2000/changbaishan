@@ -2,8 +2,9 @@ class Admin::ProductsController <  Admin::BaseController
 
   def index
     unless params[:filter].blank?
-      key_word = "%#{ params[:filter] }%"
-      scope = Product.includes(:product_category).where{( name.like key_word ) | ( id == key_word ) | ( description.like key_word )}
+      raw_keyword = params[:filter]
+      keyword = "%#{ params[:filter] }%"
+      scope = Product.includes(:product_category).where{( name.like keyword ) | ( id == raw_keyword ) | ( description.like keyword )}
     else
       scope = Product.includes(:product_category).all
     end

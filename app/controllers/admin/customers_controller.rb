@@ -2,8 +2,9 @@ class Admin::CustomersController <  Admin::BaseController
 
   def index
     unless params[:filter].blank?
-      key_word = "%#{ params[:filter] }%"
-      scope = Customer.includes(:user).where{( name.like key_word ) | ( address.like key_word ) | ( id == key_word )}
+      raw_keyword = params[:filter]
+      keyword = "%#{ params[:filter] }%"
+      scope = Customer.includes(:user).where{( name.like keyword ) | ( address.like keyword ) | ( id == raw_keyword )}
     else
       scope = Customer.includes(:user).all
     end

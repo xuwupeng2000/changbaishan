@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'pages/welcom'
+
+  get 'pages/user_agreement'
+
+  get 'pages/question_and_answers'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

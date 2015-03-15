@@ -1,4 +1,8 @@
 class CustomersController < ApplicationController
+  include SmartListing::Helper::ControllerExtensions
+  helper  SmartListing::Helper
+
+  before_action :authenticate_user
 
   def index
     unless params[:filter].blank?
