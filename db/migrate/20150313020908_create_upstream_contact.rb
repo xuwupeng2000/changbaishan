@@ -4,6 +4,9 @@ class CreateUpstreamContact < ActiveRecord::Migration
       t.references :upstream
       t.string :name
       t.string :detail
+
     end
+
+    add_index :upstream_contacts, :name
   end
 end

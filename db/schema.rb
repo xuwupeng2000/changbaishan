@@ -28,9 +28,13 @@ ActiveRecord::Schema.define(version: 20150313022655) do
     t.integer  "user_id"
     t.string   "name"
     t.string   "address"
+    t.datetime "deleted_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "customers", ["deleted_at"], name: "index_customers_on_deleted_at", using: :btree
+  add_index "customers", ["name"], name: "index_customers_on_name", using: :btree
 
   create_table "deliverables", force: true do |t|
     t.integer  "order_id"
@@ -39,23 +43,25 @@ ActiveRecord::Schema.define(version: 20150313022655) do
     t.decimal  "cost"
     t.string   "address"
     t.string   "state"
+    t.string   "code"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "discounts", force: true do |t|
-    t.integer "order_id"
-    t.decimal "rate"
-    t.decimal "value"
-  end
+  add_index "deliverables", ["address"], name: "index_deliverables_on_address", using: :btree
+  add_index "deliverables", ["code"], name: "index_deliverables_on_code", using: :btree
+  add_index "deliverables", ["name"], name: "index_deliverables_on_name", using: :btree
 
   create_table "goods", force: true do |t|
-    t.integer "user_id"
-    t.integer "product_id"
-    t.integer "upstream_id"
-    t.decimal "purchase_price"
-    t.decimal "selling_price"
+    t.integer  "user_id"
+    t.integer  "product_id"
+    t.integer  "upstream_id"
+    t.decimal  "purchase_price"
+    t.decimal  "selling_price"
+    t.datetime "deleted_at"
   end
+
+  add_index "goods", ["deleted_at"], name: "index_goods_on_deleted_at", using: :btree
 
   create_table "orders", force: true do |t|
     t.integer  "user_id"
@@ -63,12 +69,17 @@ ActiveRecord::Schema.define(version: 20150313022655) do
     t.date     "placed_at"
     t.string   "code"
     t.string   "state"
+    t.datetime "deleted_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "orders", ["code"], name: "index_orders_on_code", using: :btree
+  add_index "orders", ["deleted_at"], name: "index_orders_on_deleted_at", using: :btree
+
   create_table "preferences", force: true do |t|
     t.integer  "customer_id"
+    t.string   "name"
     t.decimal  "profit_margin"
     t.decimal  "profit_per_item"
     t.string   "state"
@@ -89,9 +100,13 @@ ActiveRecord::Schema.define(version: 20150313022655) do
     t.decimal  "weight"
     t.boolean  "is_public",           default: false
     t.string   "state"
+    t.datetime "deleted_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "products", ["deleted_at"], name: "index_products_on_deleted_at", using: :btree
+  add_index "products", ["name"], name: "index_products_on_name", using: :btree
 
   create_table "roles", force: true do |t|
     t.string   "name"
@@ -118,6 +133,8 @@ ActiveRecord::Schema.define(version: 20150313022655) do
     t.string  "name"
     t.string  "detail"
   end
+
+  add_index "upstream_contacts", ["name"], name: "index_upstream_contacts_on_name", using: :btree
 
   create_table "upstreams", force: true do |t|
     t.integer "user_id"

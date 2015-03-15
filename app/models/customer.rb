@@ -1,4 +1,6 @@
 class Customer < ActiveRecord::Base
+  acts_as_paranoid
+
   belongs_to :user
   has_many :preference
   has_many :customer_contact, class_name: 'Customer::Contact'

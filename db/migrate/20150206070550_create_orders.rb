@@ -6,7 +6,12 @@ class CreateOrders < ActiveRecord::Migration
       t.date :placed_at
       t.string :code
       t.string :state
+      t.datetime :deleted_at
       t.timestamps
     end
+
+    add_index :orders, :deleted_at
+    add_index :orders, :code
   end
+
 end

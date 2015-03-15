@@ -46,6 +46,9 @@ gem 'smart_listing'
 # State machine
 gem 'state_machine'
 
+# Soft delete
+gem "paranoia", "~> 2.0"
+
 group :development, :test do
   gem 'mailcatcher'
   gem 'spring'

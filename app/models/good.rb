@@ -1,4 +1,6 @@
 class Good < ActiveRecord::Base
+  acts_as_paranoid
+
   belongs_to :user
   belongs_to :product
   belongs_to :upstream
