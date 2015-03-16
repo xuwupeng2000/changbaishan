@@ -1,0 +1,65 @@
+%h3= @customer.name
+
+%hr
+
+.row
+  .col-lg-5.light-border
+    %h4 
+      Profile
+
+    .cleardot
+
+    %label
+      Name:
+    = display_row(@customer.name)
+
+    %label
+      Address:
+    = display_row(@customer.address)
+
+  .col-lg-5.light-border
+    %h4
+      Contacts
+
+    - @customer.customer_contacts.each do |contact|
+      = display_row(contact.one_line_detail)
+
+%hr
+
+.row
+  .col-lg-12
+    %h4
+      Preferences
+
+    .what-this-about
+      Preferences is a object that attachs to certain customer to provide 
+      a number of configs.
+
+      %p TODO: detail should in this screen
+      %p TODO: user should be able to edit some type of preferences without leaving this screen (AngularJS view inline editing)
+      %p TODO: user should be able to create new preferences without leaving this screen (AngularJS view)
+
+      %ul
+        %li
+          Profit margin
+        %li
+          Blah
+        %li
+          Blah
+
+
+.clearfix
+
+.row
+  .col-lg-12
+    %h4
+      Order History
+
+    .what-this-about
+      %p TODO: display the history of user ordering eg:
+      %p TODO: detail should be in this screen, use grid not modal, user would like to get an overview
+      %p TODO: user should be albe to edit order but not on this screen
+
+      %ul
+        %li How much total worth goods have been brought by this user?
+        %li What has been brought by this user?

@@ -14,6 +14,10 @@ class CustomersController < ApplicationController
     @customers = smart_listing_create(:customers, scope, partial: "customers/listing")
   end
 
+  def show
+    @customer = Customer.includes(:customer_contacts).find(params[:id])
+  end
+
   def edit
 
   end

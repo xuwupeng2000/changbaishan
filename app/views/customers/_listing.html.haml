@@ -21,7 +21,7 @@
           %td= customer.address
           %td
             - customer.customer_contacts.each do |contact|
-              %li= display_customer_contact(contact)
+              %li= contact.one_line_detail
           %td
             = link_to 'Detail', customer_path(customer), class: 'btn btn-primary'
 
