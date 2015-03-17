@@ -1,0 +1,5 @@
+asset 'angular'
+asset 'angular-xeditable'
+asset 'angular-ui-router'
+asset 'angular-busy'
+asset 'restangular'

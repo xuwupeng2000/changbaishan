@@ -2,8 +2,9 @@ class Admin::UsersController <  Admin::BaseController
 
   def index
     unless params[:filter].blank?
-      key_word = "%#{ params[:filter] }%"
-      scope = User.where{( first_name.like key_word ) | ( last_name.like key_word ) | ( email.like key_word ) | ( id == key_word )}
+      raw_keyword = params[:filter]
+      keyword = "%#{ params[:filter] }%"
+      scope = User.where{( first_name.like keyword ) | ( last_name.like keyword ) | ( email.like keyword ) | ( id == raw_keyword )}
     else
       scope = User.all
     end
@@ -30,7 +31,7 @@ class Admin::UsersController <  Admin::BaseController
     @user = User.find(params[:id])
     @user.disable
 
-    flash[:sccess] = 'User has been archived'
+    flash[:success] = 'User has been archived'
     redirect_to admin_users_path
   end
 
@@ -38,7 +39,7 @@ class Admin::UsersController <  Admin::BaseController
     @user = User.find(params[:id])
     @user.enable
 
-    flash[:sccess] = 'User has been enabled (active)'
+    flash[:success] = 'User has been enabled (active)'
     redirect_to admin_users_path
   end
 

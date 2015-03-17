@@ -2,8 +2,9 @@ class Admin::ProductsController <  Admin::BaseController
 
   def index
     unless params[:filter].blank?
-      key_word = "%#{ params[:filter] }%"
-      scope = Product.includes(:product_category).where{( name.like key_word ) | ( id == key_word ) | ( description.like key_word )}
+      raw_keyword = params[:filter]
+      keyword = "%#{ params[:filter] }%"
+      scope = Product.includes(:product_category).where{( name.like keyword ) | ( id == raw_keyword ) | ( description.like keyword )}
     else
       scope = Product.includes(:product_category).all
     end
@@ -26,7 +27,7 @@ class Admin::ProductsController <  Admin::BaseController
     @product.user_id = current_user.id
 
     if @product.save
-      flash[:sccess] = 'Product has been created successfully'
+      flash[:success] = 'Product has been created successfully'
       redirect_to admin_products_path
     else
       render :new
@@ -49,7 +50,7 @@ class Admin::ProductsController <  Admin::BaseController
     @product = Product.find(params[:id])
     @product.archive
 
-    flash[:sccess] = 'Product has been archived'
+    flash[:success] = 'Product has been archived'
     redirect_to admin_products_path
   end
 
@@ -57,7 +58,7 @@ class Admin::ProductsController <  Admin::BaseController
     @product = Product.find(params[:id])
     @product.activate
 
-    flash[:sccess] = 'Product has been enabled (active)'
+    flash[:success] = 'Product has been enabled (active)'
     redirect_to admin_products_path
   end
 

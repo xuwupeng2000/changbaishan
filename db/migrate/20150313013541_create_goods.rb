@@ -6,6 +6,9 @@ class CreateGoods < ActiveRecord::Migration
       t.references :upstream
       t.decimal :purchase_price
       t.decimal :selling_price
+      t.datetime :deleted_at
+
     end
+    add_index :goods, :deleted_at
   end
 end

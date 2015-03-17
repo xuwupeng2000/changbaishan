@@ -8,17 +8,21 @@ gem 'pg'
 gem 'active_model_serializers'
 gem 'jbuilder', '~> 2.0'
 
-# JS
-gem 'gon'
+# Basic JS
 gem 'jquery-rails'
-gem 'angularjs-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 
-gem 'turbolinks'
-gem 'jquery-turbolinks'
+# Addon of Assets Pipleline
+gem 'bower-rails'
 
-# Auth
+# Front-end
+gem 'gon'
+gem 'angular-rails-templates' # Angularjs templates finder
+gem 'angularjs-rails-resource', '~> 2.0.0' # Angularjs $resource
+gem 'ng-rails-csrf' # Angularjs csrf token provider
+
+# Auth gem 'devise'
 gem 'devise'
 gem "rolify"
 gem "pundit"
@@ -45,6 +49,9 @@ gem 'smart_listing'
 
 # State machine
 gem 'state_machine'
+
+# Soft delete
+gem "paranoia", "~> 2.0"
 
 group :development, :test do
   gem 'mailcatcher'
