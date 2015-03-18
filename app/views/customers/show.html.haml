@@ -2,20 +2,14 @@
 
 %hr
 
-.row
+.row{ 'ng-controller' => 'CustomerController' }
   .col-lg-5.light-border
     %h4 
       Profile
 
     .cleardot
 
-    %label
-      Name:
-    = display_row(@customer.name)
-
-    %label
-      Address:
-    = display_row(@customer.address)
+    = render partial: "customers/templates/profile"
 
   .col-lg-5.light-border
     %h4

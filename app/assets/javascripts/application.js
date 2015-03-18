@@ -19,7 +19,14 @@
 //= require angular-animate/angular-animate
 //= require angular-ui-router/release/angular-ui-router
 //= require angular-xeditable/dist/js/xeditable
+//= require angular-strap/dist/angular-strap
 //= require lodash/dist/lodash
 //= require restangular/dist/restangular
+//= require angular-rails-templates
+//= require angularjs/rails/resource
+//= require angularjs/rails/resource/extensions/snapshots
 //= require_tree ./modules
+//= require ./angular_modules/hua_yue_ye_base
+//= require_tree ./angular_modules/customers
+//= require_tree ./angular_modules/rails_resources/
 //= require_tree .

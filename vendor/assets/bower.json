@@ -5,6 +5,7 @@
     "angular-xeditable": "latest",
     "angular-ui-router": "latest",
     "angular-busy": "latest",
-    "restangular": "latest"
+    "restangular": "latest",
+    "angular-strap": "latest"
   }
 }
