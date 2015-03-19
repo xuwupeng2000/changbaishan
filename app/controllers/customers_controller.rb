@@ -16,6 +16,12 @@ class CustomersController < ApplicationController
 
   def show
     @customer = Customer.includes(:customer_contacts).find(params[:id])
+    gon.customer = @customer
+
+    respond_to do |fmt|
+      fmt.json { render :show }
+      fmt.html { render :show }
+    end
   end
 
   def edit
@@ -23,7 +29,12 @@ class CustomersController < ApplicationController
   end
 
   def update
+    @customer = Customer.find(params[:id])
+    @customer.update_attributes(customer_params)
 
+    respond_to do |fmt|
+      fmt.json { render :update }
+    end
   end
 
   def destroy
@@ -41,7 +52,7 @@ class CustomersController < ApplicationController
   private
 
   def customer_params
-
+    params.require(:customer).permit(:name, :address)
   end
 
 end
