@@ -99,4 +99,6 @@ Rails.application.routes.draw do
 
   root :to => "dashboard#index"
 
+  # add welcome page route
+  get 'welcome' => 'info#index'
 end

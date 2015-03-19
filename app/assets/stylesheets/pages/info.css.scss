@@ -1,0 +1,95 @@
+@import '../configs/_colors.scss';
+h1
+{
+  font-size: 42px;
+}
+h2
+{
+ font-size: 36px;
+}
+.highlight
+{
+  color: $mid-red;
+}
+.heading
+{
+  font-size : 60px;
+  color: $off-white;
+}
+.banner
+{
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-image: asset-data-url("info_image/background_banner.jpg") !important;  
+  min-height: 515px;
+  margin-top: -20px;
+
+}
+.cloud
+{
+  background-image: asset-data-url("info_image/cloud-bg.jpg") !important;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  min-height: 329px;
+  overflow: hidden;
+}
+.cloud-1
+{
+  width: 300px;
+  left: 60%;
+  top: -1px;
+  position: absolute;
+}
+.cloud-2
+{
+  width: 347px;
+  left: 10%;
+  top: -1px;
+  position: absolute;
+}
+.cloud-3
+{
+  width: 470px;
+  top: 50px;
+  left: 60%;
+  position: absolute;
+}
+.cloud-4
+{
+  width: 762px;
+  top: 60px;
+  right: 50%;
+  position: absolute;
+}
+.cloud-5
+{
+  width: 587px;
+  top: 180px;
+  left: 50%;
+  position: absolute;
+}
+.cloud-6
+{
+  width: 857px;
+  top: 100px;
+  left: 60%;
+  position: absolute;
+}
+.content-white
+{
+  color: $off-white;
+  text-align: center;
+}
+.content-black
+{
+  color: $bg_dark;
+  text-align: center;
+}
+.z-index50
+{
+  z-index: 50;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+
+}

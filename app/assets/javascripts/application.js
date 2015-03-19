@@ -16,3 +16,4 @@
 //= require smart_listing
 //= require_tree ./modules
 //= require_tree .
+//= import info.js

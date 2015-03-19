@@ -15,11 +15,7 @@
   %body
     = render partial: "/shared/flash_messages"
     = render partial: "/shared/topnav"
-    .clearfix
-
-    .main
-      .container
-        = yield
+    = yield
 
     %footer.footer
       .bottom-links
