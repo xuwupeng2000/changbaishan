@@ -29,7 +29,8 @@ class CustomersController < ApplicationController
   end
 
   def update
-    @customer = Customer.includes(:customer_contacts).find(params[:id])
+    @customer = Customer.find(params[:id])
+    @customer.update_attributes(customer_params)
 
     respond_to do |fmt|
       fmt.json { render :update }
@@ -51,7 +52,7 @@ class CustomersController < ApplicationController
   private
 
   def customer_params
-
+    params.require(:customer).permit(:name, :address)
   end
 
 end

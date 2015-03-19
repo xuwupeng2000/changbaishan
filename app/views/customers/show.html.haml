@@ -1,59 +1,61 @@
-%h3= @customer.name
+%div{ 'ng-controller' => 'CustomerController' }
 
-%hr
+  %h3 {{ customer.name }}
 
-.row{ 'ng-controller' => 'CustomerController' }
-  .col-lg-5.light-border
-    %h4 
-      Profile
+  %hr
 
-    .cleardot
+  .row
+    .col-lg-5.light-border
+      %h4 
+        Profile
 
-    = render partial: "customers/templates/profile"
+      .cleardot
 
-  .col-lg-5.light-border
-    %h4
-      Contacts
+      = render partial: "customers/templates/profile"
 
-    - @customer.customer_contacts.each do |contact|
-      = display_row(contact.one_line_detail)
+    .col-lg-5.light-border
+      %h4
+        Contacts
 
-%hr
+      - @customer.customer_contacts.each do |contact|
+        = display_row(contact.one_line_detail)
 
-.row
-  .col-lg-12
-    %h4
-      Preferences
+  %hr
 
-    .what-this-about
-      Preferences is a object that attachs to certain customer to provide 
-      a number of configs.
+  .row
+    .col-lg-12
+      %h4
+        Preferences
 
-      %p TODO: detail should in this screen
-      %p TODO: user should be able to edit some type of preferences without leaving this screen (AngularJS view inline editing)
-      %p TODO: user should be able to create new preferences without leaving this screen (AngularJS view)
+      .what-this-about
+        Preferences is a object that attachs to certain customer to provide 
+        a number of configs.
 
-      %ul
-        %li
-          Profit margin
-        %li
-          Blah
-        %li
-          Blah
+        %p TODO: detail should in this screen
+        %p TODO: user should be able to edit some type of preferences without leaving this screen (AngularJS view inline editing)
+        %p TODO: user should be able to create new preferences without leaving this screen (AngularJS view)
+
+        %ul
+          %li
+            Profit margin
+          %li
+            Blah
+          %li
+            Blah
 
 
-.clearfix
+  .clearfix
 
-.row
-  .col-lg-12
-    %h4
-      Order History
+  .row
+    .col-lg-12
+      %h4
+        Order History
 
-    .what-this-about
-      %p TODO: display the history of user ordering eg:
-      %p TODO: detail should be in this screen, use grid not modal, user would like to get an overview
-      %p TODO: user should be albe to edit order but not on this screen
+      .what-this-about
+        %p TODO: display the history of user ordering eg:
+        %p TODO: detail should be in this screen, use grid not modal, user would like to get an overview
+        %p TODO: user should be albe to edit order but not on this screen
 
-      %ul
-        %li How much total worth goods have been brought by this user?
-        %li What has been brought by this user?
+        %ul
+          %li How much total worth goods have been brought by this user?
+          %li What has been brought by this user?

@@ -43,14 +43,14 @@ ActiveRecord::Schema.define(version: 20150313022655) do
     t.decimal  "cost"
     t.string   "address"
     t.string   "state"
-    t.string   "code"
+    t.string   "tracking_number"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "deliverables", ["address"], name: "index_deliverables_on_address", using: :btree
-  add_index "deliverables", ["code"], name: "index_deliverables_on_code", using: :btree
   add_index "deliverables", ["name"], name: "index_deliverables_on_name", using: :btree
+  add_index "deliverables", ["tracking_number"], name: "index_deliverables_on_tracking_number", using: :btree
 
   create_table "goods", force: true do |t|
     t.integer  "user_id"
