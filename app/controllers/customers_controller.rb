@@ -16,7 +16,8 @@ class CustomersController < ApplicationController
 
   def show
     @customer = Customer.includes(:customer_contacts).find(params[:id])
-    gon.customer = @customer
+    gon.customer          = @customer
+    gon.customer_contacts = @customer.customer_contacts
 
     respond_to do |fmt|
       fmt.json { render :show }

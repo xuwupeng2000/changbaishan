@@ -14,11 +14,7 @@
       = render partial: "customers/templates/profile"
 
     .col-lg-5.light-border
-      %h4
-        Contacts
-
-      - @customer.customer_contacts.each do |contact|
-        = display_row(contact.one_line_detail)
+      = render partial: "customers/templates/contacts"
 
   %hr
 

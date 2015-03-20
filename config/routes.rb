@@ -74,7 +74,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :customers do
+  resources :customers, only: [:update, :create, :destroy, :new, :show, :index] do
     resources :preferences, only: [:index, :update, :create, :destroy]
     resources :contacts,    only: [:update, :create, :destroy]
   end

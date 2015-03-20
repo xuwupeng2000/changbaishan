@@ -1,0 +1,14 @@
+<h4>Contacts</h4>
+
+<div ng-controller='CustomerContactController'>
+
+  <div ng-repeat='contact in customerContacts'>
+    <div class='display-row {{contact.name | lowercase}}-row'>
+      <span class='display-label'> {{contact.name}} </span>
+      <span> <a onbeforesave="updateContact($data) editable-text="contact.detail">{{contact.detail}}</a> </span>
+    </div>
+  </div>
+  
+</div>
+
+

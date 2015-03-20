@@ -9,7 +9,12 @@ class ApplicationController < ActionController::Base
   def authenticate_user
     return if current_user
 
-    flash[:error] = 'Log in please.'
+    toaster =  { message: 'Log in please.', type: 'success' }
     redirect_to new_user_session_path
   end
+
+  def toaster=(hash)
+    gon.toaster = hash
+  end
+
 end

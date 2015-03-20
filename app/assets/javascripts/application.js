@@ -25,6 +25,7 @@
 //= require angular-rails-templates
 //= require angularjs/rails/resource
 //= require angularjs/rails/resource/extensions/snapshots
+//= require angularjs-flash-messages/angular-flash
 //= require_tree ./modules
 //= require ./angular_modules/hua_yue_ye_base
 //= require_tree ./angular_modules/customers
