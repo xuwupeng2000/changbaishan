@@ -5,7 +5,15 @@
   <div ng-repeat='contact in customerContacts'>
     <div class='display-row {{contact.name | lowercase}}-row'>
       <span class='display-label'> {{contact.name}} </span>
-      <span> <a onbeforesave="updateContact($data) editable-text="contact.detail">{{contact.detail}}</a> </span>
+
+      <span> <a editable-text="contact.detail" onbeforesave="updateCustomerContact($data, contact.id)">{{contact.detail}}</a> </span>
+
+      <span class='pull-right' ng-click="destroyCustomerContact(contact.id)"> 
+        <button class="btn btn-xxs btn-danger">
+          <i class="fa fa-trash-o"></i> 
+        </button>
+      </span>
+
     </div>
   </div>
   

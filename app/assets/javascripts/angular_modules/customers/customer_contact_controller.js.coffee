@@ -1,12 +1,15 @@
-angular.module('ye').controller("CustomerContactController", [ '$scope', 'CustomerContact', ($scope, CustomerContact) ->
-  #$scope.customer         = gon.customer
-  #$scope.customerContacts = gon.customer_contacts
+angular.module('ye').controller("CustomerContactController", [ '$scope', 'Restangular', ($scope, Restangular) ->
+  $scope.updateCustomerContact = (attributes, id) ->
+    contact = Restangular.all('customer').one('contacts', id)
+    contact.name = attributes.name
+    contact.detail = attributes.detail
+    contact.put()
 
-  #$scope.updateCustomerProfile = (attributes) ->
-    #Customer.get(gon.customer.id).then((customer) ->
-      #customer.name = attributes.name
-      #customer.address = attributes.address
-      #customer.update()
-    #)
+  $scope.destroyCustomerContact = (id) ->
+    contact = Restangular.all('customer').one('contacts', id)
+    contact.remove().then((response) ->
+      $scope.customerContacts= response
+    )
+
 ])
 

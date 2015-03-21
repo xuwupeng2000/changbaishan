@@ -76,6 +76,9 @@ Rails.application.routes.draw do
 
   resources :customers, only: [:update, :create, :destroy, :new, :show, :index] do
     resources :preferences, only: [:index, :update, :create, :destroy]
+  end
+
+  namespace :customer do
     resources :contacts,    only: [:update, :create, :destroy]
   end
 
