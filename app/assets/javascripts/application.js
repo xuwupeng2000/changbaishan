@@ -23,6 +23,8 @@
 //= require restangular/dist/restangular
 //= require angular-rails-templates
 //= require angular-flash-messages/angular-flash
+//= require angular-validation/dist/angular-validation
+//= require angular-validation/dist/angular-validation-rule
 //= require_tree ./modules
 //= require ./angular_modules/hua_yue_ye_base
 //= require_tree ./angular_modules/directives

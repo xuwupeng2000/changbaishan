@@ -8,8 +8,9 @@ class Customer::ContactsController < ApplicationController
     render :update
   end
 
-  def craete
+  def create
     @contact = Customer::Contact.new(customer_contact_params)
+    @contact.customer_id = params[:customer_id]
     @contact.save
 
     render :create
@@ -28,7 +29,7 @@ class Customer::ContactsController < ApplicationController
   private
 
   def customer_contact_params
-    params.permit(:name, :detail)
+    params.require(:contact).permit(:name, :detail, :customer_id)
   end
 
 end

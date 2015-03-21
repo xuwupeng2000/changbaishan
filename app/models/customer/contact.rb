@@ -5,4 +5,5 @@ class Customer::Contact < ActiveRecord::Base
   def one_line_detail
     [name, detail].join(' : ')
   end
+
 end

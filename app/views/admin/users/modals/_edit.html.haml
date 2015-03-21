@@ -5,19 +5,20 @@
         = icon 'times'
 
       %h3 Edit User
-      .row
-        .col-lg-8
-          = simple_form_for(user, url: admin_user_path(user), remote: true, html: { class: 'light-border form-horizontal', method: :put}) do |f|
-            = f.error_notification
 
-            .form-inputs
-              = f.input :first_name, autofocus: true, required: true
-              = f.input :last_name, required: true
-              = f.input :email, required: true
+    .row
+      .col-lg-8
+        = simple_form_for(user, url: admin_user_path(user), remote: true, html: { class: 'light-border form-horizontal', method: :put}) do |f|
+          = f.error_notification
 
-            .modal-footer
-              .form-actions
-                = f.button :submit, "Update"
-                %a.btn.btn-default{:'data-dismiss' => 'modal', :'aria-hidden' => 'true'}
-                  Cancel
+          .form-inputs
+            = f.input :first_name, autofocus: true, required: true
+            = f.input :last_name, required: true
+            = f.input :email, required: true
+
+          .modal-footer
+            .form-actions
+              = f.button :submit, "Update"
+              %a.btn.btn-default{:'data-dismiss' => 'modal', :'aria-hidden' => 'true'}
+                Cancel
 

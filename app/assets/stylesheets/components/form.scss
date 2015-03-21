@@ -24,6 +24,7 @@ span.error {
 }
 
 .form-horizontal {
+
   label {
     display: inline-block;
     min-width: 30%;
@@ -57,11 +58,20 @@ span.error {
     margin-left: 31%;
     color: $light-gray;
   }
+  
+  select {
+    min-width: 50%;
+    max-width: 88%
+  }
 
 }
 
 .form-vertical {
   input[type='text'] {
+    min-width: 88%;
+  }
+
+  select {
     min-width: 88%;
   }
 

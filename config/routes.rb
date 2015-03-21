@@ -68,18 +68,16 @@ Rails.application.routes.draw do
 
   # Some default routes prepared for JS request
   resources :products
+
   resources :goods do
     resources :upstreams do
-      resources :contact, only: [:update, :create, :destroy]
+      resources :contact, only: [:update, :create, :destroy], shallow: true
     end
   end
 
   resources :customers, only: [:update, :create, :destroy, :new, :show, :index] do
-    resources :preferences, only: [:index, :update, :create, :destroy]
-  end
-
-  namespace :customer do
-    resources :contacts,    only: [:update, :create, :destroy]
+    resources :preferences, only: [:index, :update, :create, :destroy],  shallow: true
+    resources :contacts, controller: 'customer/contacts', only: [:update, :create, :destroy], shallow: true
   end
 
   resources :orders do

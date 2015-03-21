@@ -1,12 +1,12 @@
 <h4>Contacts</h4>
 
-<div ng-controller='CustomerContactController'>
+<div ng-controller='CustomerContactController as costomer'>
 
   <div ng-repeat='contact in customerContacts'>
     <div class='display-row {{contact.name | lowercase}}-row'>
       <span class='display-label'> {{contact.name}} </span>
 
-      <span> <a editable-text="contact.detail" onbeforesave="updateCustomerContact($data, contact.id)">{{contact.detail}}</a> </span>
+      <span> <a editable-text="contact.detail" onbeforesave="updateCustomerContact(contact, contact.id)">{{contact.detail}}</a> </span>
 
       <span class='pull-right' ng-really-click="destroyCustomerContact(contact.id)" ng-really-message= 'Are you sure you want to delete this contact ?'> 
         <button class="btn btn-xxs btn-danger">
@@ -16,7 +16,50 @@
 
     </div>
   </div>
+
+  <div class='pull-right'>
+    <button class='btn btn-default' data-toggle='modal', data-target='#modal-new-customer-contact'>
+      <i class="fa fa-plus-square"></i>
+      Add new contact
+    </button>
+  </div>
   
 </div>
 
+<div class='modal fade' id="modal-new-customer-contact" ng-controller='CustomerContactController as costomer'>
+  <div class='modal-content'>
+    <div class='modal-header'>
+      <button class='close' data-dismiss='modal' aria-hidden='true' >
+        <%= icon 'times' %>
+      </button>
+      <h3> Add a New Contact </h3>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-8">
+          <% types = %w( Phone WeChat QQ Facebook ) %>
+          <%= form_for :customer_contact, html: { class: 'form-vertical' } do |f| %>
+            <div class="form-inputs">
+              <label>Name:</label> <%= f.select :name, types, { 'ng-model'=>'newContact.name', class: 'select' } %>
+              <label>Detail:</label> <%= f.text_field :detail,{ required: true,  'ng-model'=>'newContact.detail' }  %>
+            <% end %>
+          </div>
+
+          <div class='modal-footer'>
+            <div class="form-actions">
+              <button ng-click='createContact(newContact)'>
+                Save
+              </button>
+              <a class='btn btn-default' data-dismiss='modal' aria-hidden='true' >
+                Cancel
+              </a>
+            </div>
+          </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
 
