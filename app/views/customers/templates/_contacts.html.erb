@@ -49,12 +49,10 @@
     <div class="row">
       <div class="col-lg-8">
           <% types = %w( Phone WeChat QQ Facebook ) %>
-          <%= form_for :customer_contact, html: { class: 'form-vertical' } do |f| %>
-            <div class="form-inputs">
-              <label>Name:</label> <%= f.select :name, types, { 'ng-model'=>'newContact.name', class: 'select' } %>
-              <label>Detail:</label> <%= f.text_field :detail,{ required: true,  'ng-model'=>'newContact.detail' }  %>
-            <% end %>
-          </div>
+          <%= simple_form_for :customer_contact, html: { class: 'form-vertical' } do |f| %>
+            <%= f.input :name,  collection: types, include_blank: false, input_html: { 'ng-model'=>'newContact.name' } %>
+            <%= f.input :detail, input_html: { 'ng-model'=>'newContact.detail' }  %>
+          <% end %>
 
           <div class='modal-footer'>
             <div class="form-actions">

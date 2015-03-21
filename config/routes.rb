@@ -70,9 +70,11 @@ Rails.application.routes.draw do
   resources :products
 
   resources :goods do
+
     resources :upstreams do
       resources :contact, only: [:update, :create, :destroy], shallow: true
     end
+
   end
 
   resources :customers, only: [:update, :create, :destroy, :new, :show, :index] do
@@ -86,19 +88,23 @@ Rails.application.routes.draw do
 
   # Namespace for admin
   namespace :admin do
+
     resources :users, only: [:index, :create, :update, :show] do
       member do
         put :disable
         put :enable
       end
     end
+
     resources :customers, only: [:index]
+
     resources :products, only: [:index, :create, :update, :new, :edit, :destroy] do
       member do
         put :archive
         put :activate
       end
     end
+
   end
 
   get 'dashboard' => 'dashboard#index', as: 'dashboard'

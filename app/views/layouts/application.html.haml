@@ -17,7 +17,7 @@
     = render partial: "/shared/topnav"
     .clearfix
 
-    .main{ 'ui-view'=>'' }
+    .main{ 'ui-view'=>'', 'ng-cloak'=>'' }
       .container
         = yield
 
