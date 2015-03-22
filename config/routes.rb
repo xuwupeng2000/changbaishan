@@ -57,7 +57,6 @@ Rails.application.routes.draw do
 
   # Routes for devise login logoff etc.
   devise_for :users, :controllers => { :registrations => "registrations", :sessions => 'sessions' }
-
   get 'admin', to: 'admin/users#index'
 
   # Some default routes prepared for JS request
@@ -99,6 +98,10 @@ Rails.application.routes.draw do
 
   root :to => "dashboard#index"
 
+  resources :info do
+    resources :users, only: [:create] 
+  end
+
   # add welcome page route
-  get 'welcome' => 'info#index'
+  get 'welcome' => 'pages#index'
 end

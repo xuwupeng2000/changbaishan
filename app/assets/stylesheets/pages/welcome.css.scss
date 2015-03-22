@@ -1,0 +1,178 @@
+@import '../configs/_colors.scss';
+h1
+{
+  font-size: 42px;
+}
+h2
+{
+ font-size: 36px;
+}
+.highlight
+{
+  color: $mid-red;
+}
+.heading
+{
+  font-size : 60px;
+  color: $off-white;
+}
+.banner
+{
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-image: asset-data-url("info_image/background_banner.jpg") !important;  
+  min-height: 515px;
+  margin-top: -20px;
+
+}
+.cloud
+{
+  background-image: asset-data-url("info_image/cloud-bg.jpg") !important;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  min-height: 329px;
+  overflow: hidden;
+}
+.cloud-1
+{
+  width: 300px;
+  left: 60%;
+  top: -1px;
+  position: absolute;
+}
+.cloud-2
+{
+  width: 347px;
+  left: 10%;
+  top: -1px;
+  position: absolute;
+}
+.cloud-3
+{
+  width: 470px;
+  top: 50px;
+  left: 60%;
+  position: absolute;
+}
+.cloud-4
+{
+  width: 762px;
+  top: 60px;
+  right: 50%;
+  position: absolute;
+}
+.cloud-5
+{
+  width: 587px;
+  top: 180px;
+  left: 50%;
+  position: absolute;
+}
+.cloud-6
+{
+  width: 857px;
+  top: 100px;
+  left: 60%;
+  position: absolute;
+}
+.content-white
+{
+  color: $off-white;
+  text-align: center;
+}
+.content-black
+{
+  color: $bg_dark;
+  text-align: center;
+}
+.z-index50
+{
+  z-index: 50;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.registrations
+{
+  color: $off-white;
+  #new_user
+  {
+    .form-actions
+    {
+      .btn
+      {
+        background-color: $bg_dark;
+      }
+    }  
+  }
+}
+
+
+///////////////////////////////////simple form format change ///////////////////////////////////////////
+.simple_form {
+  div.input {
+    margin-bottom: 10px;
+    clear: both;
+    /* Required for Webkit, but not for Gecko */
+  }
+  label {
+    float: left;
+    width: 100px;
+    text-align: right;
+    margin: 2px 5px;
+  }
+}
+
+div.boolean, .simple_form input[type='submit'] {
+  margin-left: 220px;
+}
+
+/*div.boolean label {
+  float: none;
+  margin: 0;
+}*/
+
+/*label.collection_radio_buttons {
+  float: none;
+  margin: 0;
+  margin-right: 10px;
+  vertical-align: -2px;
+  margin-left: 2px;
+}*/
+
+.field_with_errors {
+  background-color: $off-white;
+}
+
+.simple_form {
+  .error {
+    clear: left;
+    color: $mid-red;
+    display: block;
+    margin-left: 120px;
+  }
+  .hint {
+    clear: left;
+    color: $off-white;
+    display: block;
+    font-style: italic;
+  }
+}
+
+input {
+  &.radio {
+    margin-right: 5px;
+    vertical-align: -3px;
+  }
+  &.check_boxes {
+    margin-left: 3px;
+    vertical-align: -3px;
+  }
+}
+
+/*label.collection_check_boxes {
+  float: none;
+  margin: 0;
+  vertical-align: -2px;
+  margin-left: 2px;
+}*/
