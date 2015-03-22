@@ -50,7 +50,7 @@
       <div class="col-lg-8">
           <% types = %w( Phone WeChat QQ Facebook ) %>
           <%= simple_form_for :customer_contact, html: { class: 'form-vertical' } do |f| %>
-            <%= f.input :name,  collection: types, include_blank: false, input_html: { 'ng-model'=>'newContact.name' } %>
+            <%= f.input :name, label: 'Contact Type', collection: types, input_html: { 'ng-model'=>'newContact.name' } %>
             <%= f.input :detail, input_html: { 'ng-model'=>'newContact.detail' }  %>
           <% end %>
 

@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   include Pundit
 
+  before_action :set_current_user
+
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   #protect_from_forgery with: :exception
@@ -15,6 +17,10 @@ class ApplicationController < ActionController::Base
 
   def toaster=(hash)
     gon.toaster = hash
+  end
+
+  def set_current_user
+    gon.current_user = current_user
   end
 
 end

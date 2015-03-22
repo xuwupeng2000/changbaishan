@@ -1,5 +1,4 @@
 angular.module('ye').controller("CustomerContactController", [ '$scope', 'Restangular', ($scope, Restangular) ->
-  $scope.customer = gon.customer
 
   $scope.updateCustomerContact = (attributes, id) ->
     contact = Restangular.one('contacts', id)
@@ -14,7 +13,7 @@ angular.module('ye').controller("CustomerContactController", [ '$scope', 'Restan
   )
 
   $scope.createContact = (attributes) ->
-    newContact = Restangular.one('customers', gon.customer.id).all('contacts').post(attributes)
+    newContact = Restangular.one('customers', $scope.$parent.customer.id).all('contacts').post(attributes)
       .then((contact) ->
         $scope.$parent.customerContacts.push( contact )
         modal = $('#modal-new-customer-contact')
