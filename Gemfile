@@ -19,7 +19,6 @@ gem 'bower-rails'
 # Front-end
 gem 'gon'
 gem 'angular-rails-templates' # Angularjs templates finder
-gem 'angularjs-rails-resource', '~> 2.0.0' # Angularjs $resource
 gem 'ng-rails-csrf' # Angularjs csrf token provider
 
 # Auth gem 'devise'

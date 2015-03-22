@@ -18,9 +18,9 @@ class RegistrationsController < Devise::RegistrationsController
   # end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  def update
+    super
+  end
 
   # DELETE /resource
   # def destroy
@@ -48,12 +48,12 @@ class RegistrationsController < Devise::RegistrationsController
   # You can put the params you want to permit in the empty array.
   def configure_account_update_params
     devise_parameter_sanitizer.for(:account_update) do |user|
-      user.permit(:first_name, :last_name, :email, :password, :password_confirmaction)
+      user.permit(:first_name, :last_name, :email, :password, :password_confirmation, :current_password)
     end
   end
 
   def user_params
-    params.require(:user).permit(:email, :first_name, :last_name, :password, :password_confirmation)
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :current_password)
   end
 
   # The path used after sign up.

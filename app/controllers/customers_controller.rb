@@ -16,16 +16,13 @@ class CustomersController < ApplicationController
 
   def show
     @customer = Customer.includes(:customer_contacts).find(params[:id])
-    gon.customer = @customer
+    gon.customer          = @customer
+    gon.customer_contacts = @customer.customer_contacts
 
     respond_to do |fmt|
       fmt.json { render :show }
       fmt.html { render :show }
     end
-  end
-
-  def edit
-
   end
 
   def update
@@ -38,15 +35,31 @@ class CustomersController < ApplicationController
   end
 
   def destroy
+    @customer = Customer.find(params[:id])
+    @customer.destroy
 
+    flash[:notice] = 'Customer has been removed from your list'
+    redirect_to customers_path
   end
 
   def new
-
+    @customer = Customer.new(user_id: current_user.id)
   end
 
   def create
+    @customer = Customer.new(customer_params)
+    @customer.user = current_user
 
+    respond_to do |fmt|
+      fmt.html {
+        if @customer.save
+          flash[:notice] = 'Customer has been create, more detail can be added within this page'
+          redirect_to customer_path(@customer)
+        else
+          render :new
+        end
+      }
+    end
   end
 
   private

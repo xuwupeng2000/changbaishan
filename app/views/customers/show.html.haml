@@ -2,6 +2,9 @@
 
   %h3 {{ customer.name }}
 
+  .row
+    .pull-right
+      = link_to 'Remove Customer', customer_path(@customer), data: { confirm: "Are you sure you want ot remove #{@customer.name}?" }, method: :delete, class: 'btn btn-danger' 
   %hr
 
   .row
@@ -14,11 +17,7 @@
       = render partial: "customers/templates/profile"
 
     .col-lg-5.light-border
-      %h4
-        Contacts
-
-      - @customer.customer_contacts.each do |contact|
-        = display_row(contact.one_line_detail)
+      = render partial: "customers/templates/contacts"
 
   %hr
 

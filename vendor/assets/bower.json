@@ -6,6 +6,8 @@
     "angular-ui-router": "latest",
     "angular-busy": "latest",
     "restangular": "latest",
-    "angular-strap": "latest"
+    "angular-strap": "latest",
+    "angular-flash-messages": "latest",
+    "angular-validation": "latest"
   }
 }
