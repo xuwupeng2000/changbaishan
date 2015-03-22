@@ -12,8 +12,8 @@
  *
  *= require _base
  *= require_tree ./configs
- *= require_tree ./modules
  *= require_tree ./components
+ *= require_tree ./pages
  *= require_self
 
 

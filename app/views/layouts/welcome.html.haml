@@ -1,0 +1,34 @@
+!!!
+%html
+  %head
+    %meta{charset: 'utf-8'}
+    %meta{name: "viewport", content: "width=device-width, initial-scale=1.0"}
+    %title= ( html_title || 'qBit Development' )
+    = stylesheet_link_tag 'application', :media => "all"
+    = include_gon
+    = javascript_include_tag "application"
+    = favicon_link_tag 'favicon.ico'
+    = csrf_meta_tags
+
+    = favicon_link_tag 'dna.png'
+
+  %body
+    = render partial: "/shared/flash_messages"
+    = render partial: "/shared/topnav"
+    = yield
+
+    %footer.footer
+      .bottom-links
+        .container
+          .row
+            .col-sm-6.outline
+              %h5
+                About DGB
+            .col-sm-6.outline
+              %h5
+                Follow Us
+      %hr.divider
+        .container
+          .row
+            .col-sm-6
+              © 2015 qBit, All Rights Reserved.

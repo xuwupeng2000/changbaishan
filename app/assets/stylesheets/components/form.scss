@@ -1,0 +1,135 @@
+@import './configs/_colors';
+
+form {
+  padding: 5px;
+  margin: 5px
+}
+
+input {
+  display: block;
+  max-width: 388px;
+}
+
+label {
+  display: block;
+}
+
+.form-actions {
+  margin-left: 15px;
+}
+
+
+span.error {
+  color: $flash-red;
+}
+
+.form-horizontal {
+  label {
+    display: inline-block;
+    min-width: 30%;
+  }
+
+  input {
+    display: inline-block;
+  }
+
+  input[type='text'] {
+    min-width: 50%;
+    max-width: 88%
+  }
+
+  input[type='email'] {
+    min-width: 50%;
+    max-width: 88%
+  }
+
+  input[type='number'] {
+    min-width: 50%;
+    max-width: 88%
+  }
+
+  input[type='password'] {
+    min-width: 50%;
+    max-width: 88%
+  }
+
+  .hint {
+    margin-left: 31%;
+    color: $light-gray;
+  }
+
+}
+
+.form-vertical {
+  input[type='text'] {
+    min-width: 88%;
+  }
+
+  input#user_remember_me {
+    float: left;
+    min-width: unset;
+    margin-right: 12px;
+  }
+
+}
+
+.devise-shared-links {
+  min-height: 288px;
+  padding: 12px;
+}
+
+.search-inline-form {
+  margin-bottom: 24px;
+
+  label {
+    display:inline-block;
+  }
+
+  input {
+    display:inline-block;
+    min-width: 266px;
+  }
+}
+
+.btn {
+  border: 1px solid transparent;
+  border-radius: 2px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 13px;
+  line-height: 1.42857;
+  margin-bottom: 0;
+  padding: 3px 12px;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  border-color: $figured-deep-blue;
+  color: white;
+}
+
+.form-inputs {
+  padding: 5px;
+  margin: 5px
+}
+
+.input {
+  margin: 5px;
+  padding: 5px;
+}
+
+.top-actions {
+  padding: 5px;
+  marging: 5px;
+
+  .action {
+    float: right;
+  }
+}
+
+#product_description {
+  height: 266px;
+  width: 580px;
+}

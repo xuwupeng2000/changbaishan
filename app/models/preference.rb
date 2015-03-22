@@ -1,7 +1,16 @@
 class Preference < ActiveRecord::Base
   belongs_to :customer
 
-  attr_accessor :margin
+  validates_presence_of :margin, :profit_per_item, :customer
 
-  validates_presence_of :margin, :customer
+  state_machine :state, :initial => :active do
+    event :enable do
+        transition all => :active
+    end
+
+    event :archive do
+      transition all => :archived
+    end
+  end
+
 end

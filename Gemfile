@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'unicorn'
-gem 'rails', '4.1.5'
+gem 'rails', '4.1.9'
 gem 'pg'
 
 # JSON
@@ -14,6 +14,9 @@ gem 'jquery-rails'
 gem 'angularjs-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
+
+gem 'turbolinks'
+gem 'jquery-turbolinks'
 
 # Auth
 gem 'devise'
@@ -34,8 +37,17 @@ gem 'secure_headers'
 # Validation
 gem 'email_validator'
 
+# ORM wrapper
+gem "squeel"
+
+# Index magic
+gem 'smart_listing'
+
+# State machine
+gem 'state_machine'
 
 group :development, :test do
+  gem 'mailcatcher'
   gem 'spring'
   gem 'capistrano-rails', group: :development
   gem 'pry-rails'
@@ -45,4 +57,9 @@ group :development, :test do
   gem 'faker'
   gem 'awesome_print'
   gem 'sextant'
+  gem 'quiet_assets'
+  gem "rails-erd"
+  gem "bullet"
+  gem 'foreman'
+  gem 'thin'
 end

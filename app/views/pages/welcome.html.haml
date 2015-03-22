@@ -1,0 +1,93 @@
+= javascript_include_tag 'info.js'
+:javascript
+  start_Cloud_Animation();
+.banner
+  .row
+    .col-lg-6.col-lg-push-1
+      %h1.heading
+        .clearfix
+        Manage Products 
+        %br
+        better, faster
+    .col-lg-5.registrations
+      .clearfix
+      = render partial: "devise/registrations/new"
+
+.row.cloud
+  .col-lg-12
+    .content-white.z-index50
+      .clearfix
+      %h2
+        Introducing a faster, 
+        %br
+        more flexible DGB Business
+
+    = image_tag("info_image/cloud/cloud-1.png", class: "cloud-1")
+    = image_tag("info_image/cloud/cloud-2.png", class: "cloud-2")
+    = image_tag("info_image/cloud/cloud-3.png", class: "cloud-3")
+    = image_tag("info_image/cloud/cloud-4.png", class: "cloud-4")
+    = image_tag("info_image/cloud/cloud-5.png", class: "cloud-5")
+    = image_tag("info_image/cloud/cloud-6.png", class: "cloud-6")
+
+
+.row.content-black
+  .row
+    .clearfix
+    %h1
+      Why you'll love DGB
+    %p
+      There's something need to add
+  .row
+    .col-lg-6
+      =image_tag "feature/feature1.png"
+      %br
+      %br
+      %br
+      %p
+        feature 1 decsription
+      %br
+      %br
+      %br
+    .col-lg-6
+      =image_tag "feature/feature2.png"
+      %br
+      %br
+      %br
+      %p
+        feature 2 description
+      %br
+      %br
+      %br
+  
+  .row
+    .col-lg-6
+      =image_tag "feature/feature3.png"
+      %br
+      %br
+      %br
+      %p
+        feature 3 description
+      %br
+      %br
+      %br
+    .col-lg-6
+      =image_tag "feature/feature4.png"
+      %br
+      %br
+      %br
+      %p
+        feature 4 description
+      %br
+      %br
+      %br
+
+.clearfix
+
+.row.content-black
+
+  .col-lg-12  
+    %h1
+      The easiest way to Manage Business
+    =image_tag "Here is the Pict"
+
+.clearfix

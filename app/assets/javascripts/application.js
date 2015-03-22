@@ -13,4 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require smart_listing
+//= require_tree ./modules
 //= require_tree .
+//= require_tree ./pages 

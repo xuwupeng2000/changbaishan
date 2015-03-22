@@ -1,0 +1,5 @@
+.flash-messages
+  - flash.each do |key, value|
+    %div{class: "flash-message flash-#{key.to_s}"}
+      .container.strip.flash-message-content
+        = value

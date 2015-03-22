@@ -1,9 +1,7 @@
 class Customer < ActiveRecord::Base
   belongs_to :user
-  belongs_to :preference
-  has_many :contact
+  has_many :preference
+  has_many :customer_contact, class_name: 'Customer::Contact'
 
-  attr_accessor :name, :address
-
-  validates_presence_of :name, :address, :user
+  validates_presence_of :name, :address
 end

@@ -56,30 +56,53 @@ Rails.application.routes.draw do
   #
 
   # Routes for devise login logoff etc.
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => "registrations", :sessions => 'sessions' }
+
+  get 'admin', to: 'admin/users#index'
 
   # Some default routes prepared for JS request
   resources :products
+  resources :goods do
+    resources :upstreams do
+      resources :contact, only: [:update, :create, :destroy]
+    end
+  end
 
   resources :customers do
     resources :preferences, only: [:index, :update, :create, :destroy]
-    resources :contacts,    only: [:index, :update, :create, :destroy]
+    resources :contacts,    only: [:update, :create, :destroy]
   end
 
   resources :orders do
-    resources :sub_orders,  only: [:index, :update, :create, :destroy]
-    resources :deliverable, only: [:index, :update, :create, :destroy]
+    resources :deliverable, only: [:index]
   end
 
   # Namespace for admin
   namespace :admin do
-    resources :users, only: [:index, :create]
+    resources :users, only: [:index, :create, :update, :show] do
+      member do
+        put :disable
+        put :enable
+      end
+    end
+    resources :customers, only: [:index]
+    resources :products, only: [:index, :create, :update, :new, :edit, :destroy] do
+      member do
+        put :archive
+        put :activate
+      end
+    end
   end
-
-  get 'login'     => 'devise/sessions#new', as: 'login'
 
   get 'dashboard' => 'dashboard#index', as: 'dashboard'
   get 'routes'    => 'sextant/routes#index'
 
   root :to => "dashboard#index"
+
+  resources :info do
+    resources :users, only: [:create] 
+  end
+
+  # add welcome page route
+  get 'welcome' => 'pages#welcome'
 end
