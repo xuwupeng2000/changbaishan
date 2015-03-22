@@ -10,7 +10,7 @@
         <button class="btn btn-xxs btn-danger" ng-really-click="destroyCustomerContact(contact.id)" ng-really-message= 'Are you sure you want to delete this contact ?'>
           <i class="fa fa-trash-o"></i> 
         </button>
-        <button type="button" class="btn btn-xxs btn-default" ng-click="contactForm.$show()" ng-hide="contactForm.$visible">
+        <button class="btn btn-xxs btn-default" ng-click="contactForm.$show()" ng-hide="contactForm.$visible">
           <i class="fa fa-pencil-square-o"></i>
         </button>
       </span>
@@ -20,7 +20,7 @@
           {{ contact.detail }}
         </div>
 
-        <button type="submit" class="btn btn-default" ng-show="contactForm.$visible" ng-disabled="contactForm.$waiting">
+        <button class="btn btn-default" ng-show="contactForm.$visible" ng-disabled="contactForm.$waiting">
           <i class="fa fa-check"></i>
         </button>
       </form>
@@ -48,11 +48,21 @@
 
     <div class="row">
       <div class="col-lg-8">
-          <% types = %w( Phone WeChat QQ Facebook ) %>
-          <%= simple_form_for :customer_contact, html: { class: 'form-vertical' } do |f| %>
-            <%= f.input :name, label: 'Contact Type', collection: types, input_html: { 'ng-model'=>'newContact.name' } %>
-            <%= f.input :detail, input_html: { 'ng-model'=>'newContact.detail' }  %>
-          <% end %>
+
+        <form class='form-vertical light-border'>
+          <div class='input'>
+            <label>Contact Type</label>
+            <select ng-model="newContact.name"> 
+              <% types = %w( Phone WeChat QQ Facebook ) %>
+              <%= options_for_select(types)  %>
+            </select>
+          </div>
+
+          <div class='input'>
+            <label>Detail</label>
+            <input ng-model="newContact.detail" type="text">
+          </div>
+        </form>
 
           <div class='modal-footer'>
             <div class="form-actions">

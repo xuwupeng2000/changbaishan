@@ -4,10 +4,8 @@
     "angular": "latest",
     "angular-xeditable": "latest",
     "angular-ui-router": "latest",
-    "angular-busy": "latest",
     "restangular": "latest",
-    "angular-strap": "latest",
     "angular-flash-messages": "latest",
-    "angular-validation": "latest"
+    "angularjs-toaster": "latest"
   }
 }

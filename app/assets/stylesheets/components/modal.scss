@@ -15,7 +15,7 @@
 }
 
 .modal-footer {
-  border-top: 1px solid $border-gray;
+  border-top: 0;
   padding: 5px;
   text-align: right;
 }
@@ -31,4 +31,8 @@
 
 .modal {
 
+}
+
+.modal-header {
+  border: 0;
 }

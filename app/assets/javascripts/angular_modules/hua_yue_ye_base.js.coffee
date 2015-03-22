@@ -1,4 +1,4 @@
-application = angular.module("ye", ['ui.router', 'templates', 'restangular', 'xeditable'])
+application = angular.module("ye", ['toaster', 'ui.router', 'templates', 'restangular', 'xeditable'])
 
 application.run((editableOptions, editableThemes) ->
   editableOptions.theme = 'bs3'

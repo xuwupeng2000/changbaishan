@@ -15,16 +15,13 @@
 //= require bootstrap
 //= require smart_listing
 //= require angular/angular
-//= require angular-busy/dist/angular-busy
 //= require angular-animate/angular-animate
 //= require angular-ui-router/release/angular-ui-router
 //= require angular-xeditable/dist/js/xeditable
 //= require lodash/dist/lodash.compat
 //= require restangular/dist/restangular
 //= require angular-rails-templates
-//= require angular-flash-messages/angular-flash
-//= require angular-validation/dist/angular-validation
-//= require angular-validation/dist/angular-validation-rule
+//= require angularjs-toaster/toaster.js
 //= require_tree ./modules
 //= require ./angular_modules/hua_yue_ye_base
 //= require_tree ./angular_modules/directives

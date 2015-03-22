@@ -18,6 +18,7 @@ class CustomersController < ApplicationController
     @customer = Customer.includes(:customer_contacts).find(params[:id])
     gon.customer          = @customer
     gon.customer_contacts = @customer.customer_contacts
+    gon.contact_types = %w(Phone QQ WeChat Facebook Skype)
 
     respond_to do |fmt|
       fmt.json { render :show }
@@ -28,9 +29,17 @@ class CustomersController < ApplicationController
   def update
     @customer = Customer.find(params[:id])
     @customer.update_attributes(customer_params)
+    @errors = @customer.errors.full_messages
 
     respond_to do |fmt|
-      fmt.json { render :update }
+      fmt.json { 
+        if @errors.blank?
+          render :update 
+        else
+          #422 = :unprocessable_entity
+          render :errors, status: 422
+        end
+      }
     end
   end
 

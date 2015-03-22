@@ -77,16 +77,6 @@ ActiveRecord::Schema.define(version: 20150313022655) do
   add_index "orders", ["code"], name: "index_orders_on_code", using: :btree
   add_index "orders", ["deleted_at"], name: "index_orders_on_deleted_at", using: :btree
 
-  create_table "preferences", force: true do |t|
-    t.integer  "customer_id"
-    t.string   "name"
-    t.decimal  "profit_margin"
-    t.decimal  "profit_per_item"
-    t.string   "state"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "product_categories", force: true do |t|
     t.string "name"
     t.text   "description"

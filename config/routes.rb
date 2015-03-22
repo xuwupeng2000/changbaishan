@@ -1,10 +1,4 @@
 Rails.application.routes.draw do
-  get 'pages/welcom'
-
-  get 'pages/user_agreement'
-
-  get 'pages/question_and_answers'
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -64,6 +58,10 @@ Rails.application.routes.draw do
   # Routes for devise login logoff etc.
   devise_for :users, :controllers => { :registrations => "registrations", :sessions => 'sessions' }
 
+  get 'pages/welcom'
+  get 'pages/user_agreement'
+  get 'pages/question_and_answers'
+
   get 'admin', to: 'admin/users#index'
 
   # Some default routes prepared for JS request
@@ -72,13 +70,12 @@ Rails.application.routes.draw do
   resources :goods do
 
     resources :upstreams do
-      resources :contact, only: [:update, :create, :destroy], shallow: true
+      resources :contact, controller: 'upstream/contacts', only: [:update, :create, :destroy], shallow: true
     end
 
   end
 
   resources :customers, only: [:update, :create, :destroy, :new, :show, :index] do
-    resources :preferences, only: [:index, :update, :create, :destroy],  shallow: true
     resources :contacts, controller: 'customer/contacts', only: [:update, :create, :destroy], shallow: true
   end
 

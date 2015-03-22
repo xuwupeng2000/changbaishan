@@ -32,3 +32,36 @@
 .flash-alert {
   background: $flash-red;
 }
+
+#toast-container {
+  margin: 0;
+  padding: 0;
+}
+
+.toast-title {
+  display: inline-block;
+  margin-right: 12px;
+  font-size: 14px;
+  text-transform: capitalize;
+  color: white;
+}
+
+.toast-message {
+  display: inline-block;
+  font-size: 14px;
+  color: white;
+}
+
+.toast-success {
+  height: 26px;
+  padding-top: 3px;
+  padding-left: 128px;
+  background-color: $flash-green;
+}
+
+.toast-error {
+  height: 26px;
+  padding-top: 3px;
+  padding-left: 128px;
+  background-color: $flash-red;
+}
