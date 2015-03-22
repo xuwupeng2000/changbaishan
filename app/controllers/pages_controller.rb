@@ -2,7 +2,7 @@ class PagesController < ApplicationController
 
   layout "welcome"
 
-  def index
+  def welcome
     @minimum_password_length = 8
   end
 

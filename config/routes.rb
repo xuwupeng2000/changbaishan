@@ -104,5 +104,5 @@ Rails.application.routes.draw do
   end
 
   # add welcome page route
-  get 'welcome' => 'pages#index'
+  get 'welcome' => 'pages#welcome'
 end
