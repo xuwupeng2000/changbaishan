@@ -5,7 +5,7 @@
       = icon 'search'
 
 - unless smart_listing.empty?
-  %table.table.table-striped.table-bordered
+  %table.table.table-hover.table-condensed
     %thead
       %th= smart_listing.sortable "First Name", :first_name
       %th= smart_listing.sortable "Last Name", :last_name

@@ -8,7 +8,7 @@
     .action= link_to 'Add new customer', new_customer_path, class: 'btn btn-success'
 
 - unless smart_listing.empty?
-  %table.table.table-striped.table-bordered
+  %table.table.table-hover.table-responsive
     %thead
       %th= smart_listing.sortable "Name", :name
       %th Address

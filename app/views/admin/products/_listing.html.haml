@@ -8,11 +8,13 @@
     .action= link_to 'Add new product', new_admin_product_path, class: 'btn btn-success'
 
 - unless smart_listing.empty?
-  %table.table.table-striped.table-bordered
+  %table.table.table-hover.table-condensed
     %thead
       %th Product Name
       %th Description
       %th= smart_listing.sortable "Weight", :weight
+      %th= smart_listing.sortable "Purchase Price", :purchase_price
+      %th= smart_listing.sortable "Selling Price", :selling_price
       %th= smart_listing.sortable "Product Category", :category
       %th= smart_listing.sortable "Is Public Product ?", :is_public
       %th= smart_listing.sortable "Product Status", :state
@@ -23,6 +25,8 @@
           %td= prod.name
           %td= prod.description.truncate(20)
           %td= prod.weight
+          %td= prod.purchase_price
+          %td= prod.selling_price
           %td= prod.product_category.name
           %td.is-boolean= prod.is_public
           %td.is-state= prod.state

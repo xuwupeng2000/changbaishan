@@ -4,6 +4,8 @@ class CustomersController < ApplicationController
 
   before_action :authenticate_user
 
+  layout "table", only: [:index]
+
   def index
     unless params[:filter].blank?
       keyword = "%#{ params[:filter] }%"

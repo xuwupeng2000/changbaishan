@@ -4,7 +4,9 @@
   .form-inputs
     = f.input :product_category_id, collection: Product::Category.all, include_blank: false
     = f.input :name, autofocus: true, required: true
-    = f.input :weight, as: :string
+    = f.input :weight, as: :decimal
+    = f.input :purchase_price, as: :decimal
+    = f.input :selling_price, as: :decimal
     = f.hint  'Weight is calculated by KG in the system'
     = f.input :description
     = f.input :is_public, as: :select, collection: [true, false], include_blank: false
