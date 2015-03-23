@@ -2,7 +2,6 @@ angular.module('ye').controller("CustomerContactController", [ '$scope', 'Restan
 
   $scope.updateCustomerContact = (attributes, id) ->
     contact = Restangular.one('contacts', id)
-    contact.name = attributes.name
     contact.detail = attributes.detail
     contact.put()
     toaster.pop('success', "success:", "Contact has been updated.")
@@ -18,7 +17,7 @@ angular.module('ye').controller("CustomerContactController", [ '$scope', 'Restan
     newContact = Restangular.one('customers', $scope.$parent.customer.id).all('contacts').post(attributes)
       .then(
         (contact) ->
-          $scope.$parent.customerContacts.push( contact )
+          $scope.$parent.customerContacts.unshift( contact )
           modal = $('#modal-new-customer-contact')
           modal.fadeOut()
           toaster.pop('success', "success:", "Contact has been added.")
