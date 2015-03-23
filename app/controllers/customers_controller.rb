@@ -7,7 +7,7 @@ class CustomersController < ApplicationController
   def index
     unless params[:filter].blank?
       keyword = "%#{ params[:filter] }%"
-      scope = Customer.joins(:customer_contacts).where{( name.like keyword ) | ( address.like keyword ) | ( customer_contacts.detail.like keyword )}
+      scope = Customer.joins{ customer_contacts.outer }.where{( name.like keyword ) | ( address.like keyword ) | ( customer_contacts.detail.like keyword )}
     else
       scope = Customer.includes(:customer_contacts).all
     end
@@ -17,7 +17,7 @@ class CustomersController < ApplicationController
   def show
     @customer = Customer.includes(:customer_contacts).find(params[:id])
     gon.customer          = @customer
-    gon.customer_contacts = @customer.customer_contacts
+    gon.customer_contacts = @customer.customer_contacts.order('updated_at DESC')
     gon.contact_types = %w(Phone QQ WeChat Facebook Skype)
 
     respond_to do |fmt|
@@ -74,7 +74,7 @@ class CustomersController < ApplicationController
   private
 
   def customer_params
-    params.require(:customer).permit(:name, :address)
+    params.require(:customer).permit(:name, :address, :id, :detail)
   end
 
 end

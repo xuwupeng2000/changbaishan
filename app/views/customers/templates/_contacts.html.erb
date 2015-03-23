@@ -15,9 +15,10 @@
         </button>
       </span>
 
-      <form editable-form name='contactForm' onbeforesave="updateCustomerContact(contact, contact.id)">
-        <div class='display-row' editable-text="contact.detail" e-name="name" e-required >
-          {{ contact.detail }}
+      <form editable-form name='contactForm' onbeforesave="updateCustomerContact($data, contact.id)">
+
+        <div class='display-row' editable-text="contact.detail" e-name="detail" e-required >
+          {{contact.detail}}
         </div>
 
         <button class="btn btn-default" ng-show="contactForm.$visible" ng-disabled="contactForm.$waiting">
