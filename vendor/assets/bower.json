@@ -1,0 +1,11 @@
+{
+  "name": "dsl-generated dependencies",
+  "dependencies": {
+    "angular": "latest",
+    "angular-xeditable": "latest",
+    "angular-ui-router": "latest",
+    "restangular": "latest",
+    "angular-flash-messages": "latest",
+    "angularjs-toaster": "latest"
+  }
+}

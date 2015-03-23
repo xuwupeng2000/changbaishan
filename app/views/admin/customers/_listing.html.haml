@@ -1,0 +1,34 @@
+= smart_listing_controls_for(:customers) do
+  .filter.input-append.search-inline-form
+    = text_field_tag :filter, '', class: "search", placeholder: "Search name, address, or id here", autocomplete: "off"
+    %button.btn{type: "submit"}
+      = icon 'search'
+
+- unless smart_listing.empty?
+  %table.table.table-striped.table-bordered
+    %thead
+      %th= smart_listing.sortable "Name", :name
+      %th Address
+      %th Customer ID
+      %th Belongs to
+    %tbody
+      - smart_listing.collection.each do |customer|
+        %tr
+          %td= customer.name
+          %td= customer.address
+          %td= customer.id
+          - if customer.user
+            %td= link_to customer.user.name, admin_user_path(customer.user)
+          - else
+            %td
+              No corresponding user is found!
+
+
+  .pagination
+    = smart_listing.paginate
+    = smart_listing.pagination_per_page_links
+- else
+
+  .clearfix
+
+  %p.warning.sl-no-record No records!

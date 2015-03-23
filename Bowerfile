@@ -1,0 +1,6 @@
+asset 'angular'
+asset 'angular-xeditable'
+asset 'angular-ui-router'
+asset 'restangular'
+asset 'angular-flash-messages'
+asset 'angularjs-toaster'

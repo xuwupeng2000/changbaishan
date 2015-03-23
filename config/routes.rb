@@ -56,30 +56,57 @@ Rails.application.routes.draw do
   #
 
   # Routes for devise login logoff etc.
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => "registrations", :sessions => 'sessions' }
+
+  get 'pages/welcom'
+  get 'pages/user_agreement'
+  get 'pages/question_and_answers'
+
+  get 'admin', to: 'admin/users#index'
 
   # Some default routes prepared for JS request
   resources :products
 
-  resources :customers do
-    resources :preferences, only: [:index, :update, :create, :destroy]
-    resources :contacts,    only: [:index, :update, :create, :destroy]
+  resources :goods do
+
+    resources :upstreams do
+      resources :contact, controller: 'upstream/contacts', only: [:update, :create, :destroy], shallow: true
+    end
+
+  end
+
+  resources :customers, only: [:update, :create, :destroy, :new, :show, :index] do
+    resources :contacts, controller: 'customer/contacts', only: [:update, :create, :destroy], shallow: true
   end
 
   resources :orders do
-    resources :sub_orders,  only: [:index, :update, :create, :destroy]
-    resources :deliverable, only: [:index, :update, :create, :destroy]
+    resources :deliverable, only: [:index]
   end
 
   # Namespace for admin
   namespace :admin do
-    resources :users, only: [:index, :create]
-  end
 
-  get 'login'     => 'devise/sessions#new', as: 'login'
+    resources :users, only: [:index, :create, :update, :show] do
+      member do
+        put :disable
+        put :enable
+      end
+    end
+
+    resources :customers, only: [:index]
+
+    resources :products, only: [:index, :create, :update, :new, :edit, :destroy] do
+      member do
+        put :archive
+        put :activate
+      end
+    end
+
+  end
 
   get 'dashboard' => 'dashboard#index', as: 'dashboard'
   get 'routes'    => 'sextant/routes#index'
 
   root :to => "dashboard#index"
+
 end

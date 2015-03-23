@@ -13,4 +13,17 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require smart_listing
+//= require angular/angular
+//= require angular-animate/angular-animate
+//= require angular-ui-router/release/angular-ui-router
+//= require angular-xeditable/dist/js/xeditable
+//= require lodash/dist/lodash.compat
+//= require restangular/dist/restangular
+//= require angular-rails-templates
+//= require angularjs-toaster/toaster.js
+//= require_tree ./modules
+//= require ./angular_modules/hua_yue_ye_base
+//= require_tree ./angular_modules/directives
+//= require_tree ./angular_modules/customers
 //= require_tree .

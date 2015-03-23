@@ -1,9 +1,10 @@
 @import url(http://fonts.googleapis.com/css?family=Ubuntu);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
 @import url(http://fonts.googleapis.com/css?family=Arimo);
-@import "font-awesome";
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 @import './configs/_colors';
 
 div {
@@ -16,8 +17,8 @@ span {
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
-  min-height: 100%;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 14px;
 }
 
 a:hover, a:focus {
@@ -34,3 +35,12 @@ footer {
   font-size: 12px;
 }
 
+
+li {
+  list-style: none;
+}
+
+div {
+  padding: 0;
+  margin: 0;
+}

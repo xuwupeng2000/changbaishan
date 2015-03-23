@@ -1,0 +1,26 @@
+<form editable-form name="customerProfileForm" onbeforesave="updateCustomerProfile($data)">
+  <div class='display-row' editable-text="customer.name" e-name="name" e-required >
+    <label> Name: </label>
+    {{ customer.name }}
+  </div>
+
+  <div class='display-row' editable-text="customer.address" e-name="address">
+    <label> Address: </label> 
+    {{ customer.address }}
+  </div>
+
+  <div class='pull-right'>
+    <button type="button" class="btn btn-default" ng-click="customerProfileForm.$show()" ng-hide="customerProfileForm.$visible">
+      <i class="fa fa-pencil-square-o"></i>
+      Edit profile
+    </button>
+
+    <button type="submit" class="btn btn-default" ng-show="customerProfileForm.$visible" ng-disabled="customerProfileForm.$waiting">
+      <i class="fa fa-check"></i>
+    </button>
+
+    <button type="button" class="btn btn-default" ng-show="customerProfileForm.$visible" ng-disabled="customerProfileForm.$waiting" ng-click="customerProfileForm.$cancel()">
+      <i class="fa fa-times-circle-o"></i>
+    </button>
+  </div>
+</form>  

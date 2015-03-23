@@ -5,3 +5,26 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+#
+
+# These seeds are for development not production
+Product::Category.where(name: 'Other').first_or_create do |cate|
+  cate.name = 'Other'
+end
+
+admin = User.where(email: "xuwupeng2000@gmail.com").first_or_create do |user|
+  user.first_name = 'Jack'
+  user.last_name = 'Wu'
+  user.email = 'xuwupeng2000@gmail.com'
+  user.password = 'daigoubao'
+end
+
+admin.add_role :admin
+
+20.times do
+  FactoryGirl.create(:product)
+end
+
+20.times do 
+  FactoryGirl.create(:customer, user: admin)
+end

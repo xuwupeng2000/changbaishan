@@ -1,0 +1,23 @@
+%h3= @user.name
+
+.row
+  .col-lg-7.light-border
+    %h4
+      User Profile
+
+    = simple_form_for @user, url: admin_user_path(@user) do |f|
+      .form-inputs
+        = f.input :first_name, autofocus: true, disabled: true
+        = f.input :last_name, disabled: true
+        = f.input :email, disabled: true
+
+  .col-lg-4.light-border
+    %h4
+      Billing Infomation
+
+%hr
+
+.row
+  .col-lg-12.light-border
+    %h4
+      Business Statistics

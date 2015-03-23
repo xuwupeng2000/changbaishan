@@ -1,0 +1,35 @@
+= smart_listing_controls_for(:customers) do
+  .top-actions
+    .filter.input-append.search-inline-form
+      = text_field_tag :filter, '', class: "search", placeholder: "Search name, address, or contacts here", autocomplete: "off"
+      %button.btn{type: "submit"}
+        = icon 'search'
+
+    .action= link_to 'Add new customer', new_customer_path, class: 'btn btn-success'
+
+- unless smart_listing.empty?
+  %table.table.table-striped.table-bordered
+    %thead
+      %th= smart_listing.sortable "Name", :name
+      %th Address
+      %th Contacts
+      %th Actions
+    %tbody
+      - smart_listing.collection.each do |customer|
+        %tr
+          %td= customer.name
+          %td= customer.address
+          %td
+            - customer.customer_contacts.each do |contact|
+              %li= contact.one_line_detail
+          %td
+            = link_to 'Detail', customer_path(customer), class: 'btn btn-primary'
+
+  .pagination
+    = smart_listing.paginate
+    = smart_listing.pagination_per_page_links
+- else
+
+  .clearfix
+
+  %p.warning.sl-no-record No records!

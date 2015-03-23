@@ -1,0 +1,38 @@
+%div{ 'ng-controller' => 'CustomerController' }
+
+  %h3 {{ customer.name }}
+
+  .row
+    .pull-right
+      = link_to 'Delete this Customer', customer_path(@customer), data: { confirm: "Are you sure you want ot remove #{@customer.name}?" }, method: :delete, class: 'btn btn-danger' 
+  %hr
+
+  .row
+    .col-lg-5.light-border
+      %h4 
+        Profile
+
+      .cleardot
+
+      = render partial: "customers/templates/profile"
+
+    .col-lg-5.light-border
+      = render partial: "customers/templates/contacts"
+
+  %hr
+
+  .clearfix
+
+  .row
+    .col-lg-12
+      %h4
+        Order History
+
+      .what-this-about
+        %p TODO: display the history of user ordering eg:
+        %p TODO: detail should be in this screen, use grid not modal, user would like to get an overview
+        %p TODO: user should be albe to edit order but not on this screen
+
+        %ul
+          %li How much total worth goods have been brought by this user?
+          %li What has been brought by this user?

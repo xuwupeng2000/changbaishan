@@ -5,11 +5,19 @@
   border: 0 none;
   border-radius: 0;
   font-family: "Roboto Condensed",sans-serif;
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: 3px;
   text-transform: uppercase;
-  z-index: 1000;
   color: white;
+  padding: 12px;
+}
+
+.nav-tab.active {
+  background: white;
+}
+
+li.active.nav-tab a {
+  color: $dark_gray;
 }
 
 .topnav {
@@ -22,17 +30,6 @@
 
 .nav > li > a:hover, .nav > li > a:focus {
   color: $dark_gray;
-}
-
-.navbar-custom .dropdown-toggle::after {
-  content: "";
-  display: block;
-  font: 9px/1 FontAwesome;
-  margin-top: -6px;
-  position: absolute;
-  right: 0;
-  text-rendering: auto;
-  top: 50%;
 }
 
 .navbar-custom .dropdown-menu {
@@ -58,5 +55,20 @@
 
   :hover {
     text-decoration: none;
+  }
+}
+
+.nav-tab-right {
+  float: right !important;
+}
+
+.navbar-custom .dropdown-menu > li > a {
+  font-size: 12px;
+  letter-spacing: 2px;
+  padding: 11px 15px;
+  color: white;
+
+  &:hover, &:focus {
+    color: $dark_gray;
   }
 }
