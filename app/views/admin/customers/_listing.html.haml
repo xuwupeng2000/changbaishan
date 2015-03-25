@@ -1,7 +1,7 @@
 = smart_listing_controls_for(:customers) do
   .filter.input-append.search-inline-form
     = text_field_tag :filter, '', class: "search", placeholder: "Search name, address, or id here", autocomplete: "off"
-    %button.btn{type: "submit"}
+    %button.btn.btn-success{type: "submit"}
       = icon 'search'
 
 - unless smart_listing.empty?

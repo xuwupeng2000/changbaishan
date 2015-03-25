@@ -6,6 +6,7 @@
     "angular-ui-router": "latest",
     "restangular": "latest",
     "angular-flash-messages": "latest",
-    "angularjs-toaster": "latest"
+    "angularjs-toaster": "latest",
+    "angular-ui-select2": "latest"
   }
 }

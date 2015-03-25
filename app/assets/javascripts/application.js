@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require smart_listing
+//= require select2
 //= require angular/angular
 //= require angular-animate/angular-animate
 //= require angular-ui-router/release/angular-ui-router

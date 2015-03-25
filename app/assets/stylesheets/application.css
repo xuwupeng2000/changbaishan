@@ -13,6 +13,7 @@
  *= require _base
  *= require_tree ./configs
  *= require_tree ./components
+ *= require select2
  *= require_self
 
 

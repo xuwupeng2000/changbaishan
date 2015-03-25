@@ -115,9 +115,9 @@ span.error {
   line-height: 1.42857;
   margin-bottom: 0;
   padding: 3px 12px;
-  text-align: center;
-  vertical-align: middle;
+  vertical-align: top;
   white-space: nowrap;
+  vertical-align: baseline;
 }
 
 .btn-primary {
@@ -155,7 +155,7 @@ span.error {
 
 #product_description {
   height: 266px;
-  width: 580px;
+  width: 455px;
 }
 
 .phone-row {
@@ -196,7 +196,7 @@ span.error {
   border-radius: 2px;
   font-size: unset;
   padding: 2px 12px;
-  height: unset;
+  height: 32px;
 }
 
 .editable-buttons {
@@ -209,4 +209,17 @@ span.error {
 
 span.error {
   margin-left: 5px;
+}
+
+.select2 {
+  border: 0;
+  box-shadow: 0;
+  box-shadow: unset;
+  padding: 2px 0px;
+  max-width: 80%;
+  min-width: 50%;
+}
+
+.inline-filter {
+  display: inline-block;
 }
