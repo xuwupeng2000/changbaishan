@@ -32,7 +32,8 @@
             - else
               = link_to 'Disable', disable_admin_user_path(user), method: :put, class: 'btn btn-primary'
 
-            = render partial: "admin/users/modals/edit_user", locals: {user: user}
+            %div{ id: "container-edit-user-#{user.id}" }
+              = render partial: "admin/users/modals/edit_user", locals: {user: user}
 
 
   .pagination
