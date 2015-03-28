@@ -2,15 +2,6 @@
   = f.error_notification
 
   .row
-    .col-lg-8
-      .form-inputs
-        :plain
-          <span>
-            <input type="text" class="string form-control input inline-filter" autofocus="autofocus" aria-required="true" placeholder="Search product tempalte in DGB">
-            <button class="btn btn-success"> <i class="fa fa-search"></i> </button>
-          </span>
-
-  .row
     .col-lg-6
       .form-inputs
         = f.input :product_category_id, collection: Product::Category.all, include_blank: false, input_html: { class: 'js-select2 select2' }

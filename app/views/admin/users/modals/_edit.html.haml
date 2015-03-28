@@ -8,7 +8,7 @@
 
     .row
       .col-lg-8
-        = simple_form_for(user, url: admin_user_path(user), remote: true, html: { class: 'light-border form-horizontal', method: :put}) do |f|
+        = simple_form_for(user, url: admin_user_path(user), remote: true, html: { class: 'form-horizontal', method: :put}) do |f|
           = f.error_notification
 
           .form-inputs
@@ -16,9 +16,10 @@
             = f.input :last_name, required: true
             = f.input :email, required: true
 
-          .modal-footer
-            .form-actions
-              = f.button :submit, "Update"
-              %a.btn.btn-default{:'data-dismiss' => 'modal', :'aria-hidden' => 'true'}
-                Cancel
+    .modal-footer
+      .form-actions
+        = simple_form_for(user, url: admin_user_path(user), remote: true, html: { class: 'form-horizontal', method: :put}) do |f|
+          = f.button :submit, "Update"
+          %a.btn.btn-default{:'data-dismiss' => 'modal', :'aria-hidden' => 'true'}
+            Cancel
 

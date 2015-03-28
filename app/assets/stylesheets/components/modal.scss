@@ -4,20 +4,21 @@
   background-clip: padding-box;
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 6px;
-  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
-  margin-left: 16%;
-  margin-top: 10%;
-  outline: 0 none;
-  position: relative;
-  width: 66%;
-  min-height: 366px;
+
+  border-radius: 3px;
+
+  position: fixed;
+  left: 15%;
+  right: 15%;
+  top: 15%;
 }
 
 .modal-footer {
   border-top: 0;
   padding: 5px;
-  text-align: right;
+  background-color: #e6f3fa;
+  border-radius: 0;
+  border-top: 1px solid #d6ebf6;
 }
 
 .modal-backdrop {
@@ -30,9 +31,8 @@
 }
 
 .modal {
-
 }
 
 .modal-header {
-  border: 0;
+  border-bottom: 1px solid #e5e5e5;
 }

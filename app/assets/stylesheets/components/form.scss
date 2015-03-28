@@ -23,68 +23,12 @@ span.error {
   color: $flash-red;
 }
 
-.form-horizontal {
+.form-vertical {
 
-  label {
-    display: inline-block;
-    min-width: 30%;
-  }
-
-  input {
-    display: inline-block;
-  }
-
-  input[type='text'] {
-    min-width: 50%;
-    max-width: 88%
-  }
-
-  input[type='email'] {
-    min-width: 50%;
-    max-width: 88%
-  }
-
-  input[type='number'] {
-    min-width: 50%;
-    max-width: 88%
-  }
-
-  input[type='password'] {
-    min-width: 50%;
-    max-width: 88%
-  }
-
-  .hint {
-    margin-left: 31%;
-    color: $light-gray;
-  }
-  
-  select {
-    min-width: 50%;
-    max-width: 88%
-  }
 
 }
 
-.form-vertical {
-  input {
-    margin: 0;
-    padding: 0;
-  }
-
-  input[type='text'] {
-    min-width: 88%;
-  }
-
-  select {
-    min-width: 88%;
-  }
-
-  input#user_remember_me {
-    float: left;
-    min-width: unset;
-    margin-right: 12px;
-  }
+.form-horizontal {
 
 }
 
@@ -103,26 +47,9 @@ span.error {
 
   input {
     display:inline-block;
-    min-width: 266px;
+    min-width: 388px;
+    height: 34px;
   }
-}
-
-.btn {
-  border-radius: 2px;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 13px;
-  line-height: 1.42857;
-  margin-bottom: 0;
-  padding: 3px 12px;
-  vertical-align: top;
-  white-space: nowrap;
-  vertical-align: baseline;
-}
-
-.btn-primary {
-  border-color: $figured-deep-blue;
-  color: white;
 }
 
 .form-inputs {
@@ -182,9 +109,6 @@ span.error {
     font-weight: bold;
   }
 
-  .btn {
-    margin-left: 3px;
-  }
 }
 
 .editable-hide {
@@ -193,18 +117,14 @@ span.error {
 
 .form-control {
   border: 1px solid #cccccc;
-  border-radius: 2px;
-  font-size: unset;
+  border-radius: 4px;
+  font-size: 14px;
   padding: 2px 12px;
   height: 32px;
 }
 
 .editable-buttons {
   margin-left: 5px;
-}
-
-.btn-xxs {
-  padding: 1px 6px;
 }
 
 span.error {
@@ -216,10 +136,32 @@ span.error {
   box-shadow: 0;
   box-shadow: unset;
   padding: 2px 0px;
-  max-width: 80%;
-  min-width: 50%;
+  max-width: 388px;
+}
+
+.select2-container .select2-choice {
+  height: 32px;
+  padding: 1px 8px;
 }
 
 .inline-filter {
   display: inline-block;
 }
+
+.checkbox.inline {
+  padding: 3px;
+
+  label {
+    margin-top: 10px;
+  }
+}
+
+.hint {
+  margin-left: 10px;
+  color: $light-gray;
+}
+
+select {
+  max-width: 388px;
+}
+

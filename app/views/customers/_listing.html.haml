@@ -2,7 +2,7 @@
   .top-actions
     .filter.input-append.search-inline-form
       = text_field_tag :filter, '', class: "search", placeholder: "Search name, address, or contacts here", autocomplete: "off"
-      %button.btn{type: "submit"}
+      %button.btn.btn-success{type: "submit"}
         = icon 'search'
 
     .action= link_to 'Add new customer', new_customer_path, class: 'btn btn-success'

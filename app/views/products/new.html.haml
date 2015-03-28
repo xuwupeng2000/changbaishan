@@ -3,5 +3,14 @@
   %h3
     Add a New Product
 
+  .row
+    .col-lg-8
+      .form-inputs
+        :plain
+          <span>
+            <input type="text" class="string form-control input inline-filter" autofocus="autofocus" aria-required="true" placeholder="Search product tempalte in DGB">
+            <button class="btn btn-success"> <i class="fa fa-search"></i> </button>
+          </span>
+
   #user-product-form
     = render partial: "products/form"
