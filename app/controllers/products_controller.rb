@@ -3,6 +3,8 @@ class ProductsController < ApplicationController
   include SmartListing::Helper::ControllerExtensions
   helper  SmartListing::Helper
 
+  layout "table", only: [:index]
+
   def index
     unless params[:filter].blank?
       keyword = "%#{ params[:filter] }%"
