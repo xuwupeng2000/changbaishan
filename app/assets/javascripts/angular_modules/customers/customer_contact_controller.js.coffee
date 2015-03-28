@@ -13,18 +13,5 @@ angular.module('ye').controller("CustomerContactController", [ '$scope', 'Restan
       toaster.pop('success', "success:", "Contact has been removed.")
   )
 
-  $scope.createContact = (attributes) ->
-    newContact = Restangular.one('customers', $scope.$parent.customer.id).all('contacts').post(attributes)
-      .then(
-        (contact) ->
-          $scope.$parent.customerContacts.unshift( contact )
-          modal = $('#modal-new-customer-contact')
-          modal.fadeOut()
-          toaster.pop('success', "success:", "Contact has been added.")
-        (err) ->
-          errors = err.data.errors
-          toaster.pop('error', "error:", errors.join(' ,'))
-      )
-
 ])
 

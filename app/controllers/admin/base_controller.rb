@@ -2,6 +2,8 @@ class Admin::BaseController < ApplicationController
   before_action :authenticate_user
   before_action :authorize_admin!
 
+  layout "table", only: [:index]
+
   include SmartListing::Helper::ControllerExtensions
   helper  SmartListing::Helper
 

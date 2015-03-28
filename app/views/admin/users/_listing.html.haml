@@ -1,11 +1,11 @@
 = smart_listing_controls_for(:users) do
   .filter.input-append.search-inline-form
     = text_field_tag :filter, '', class: "search", placeholder: "Search name, email or id here", autocomplete: "off"
-    %button.btn{type: "submit"}
+    %button.btn.btn-success{type: "submit"}
       = icon 'search'
 
 - unless smart_listing.empty?
-  %table.table.table-striped.table-bordered
+  %table.table.table-hover.table-condensed
     %thead
       %th= smart_listing.sortable "First Name", :first_name
       %th= smart_listing.sortable "Last Name", :last_name
@@ -32,7 +32,8 @@
             - else
               = link_to 'Disable', disable_admin_user_path(user), method: :put, class: 'btn btn-primary'
 
-            = render partial: "admin/users/modals/edit", locals: {user: user}
+            %div{ id: "container-edit-user-#{user.id}" }
+              = render partial: "admin/users/modals/edit_user", locals: {user: user}
 
 
   .pagination

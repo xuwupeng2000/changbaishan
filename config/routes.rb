@@ -65,17 +65,15 @@ Rails.application.routes.draw do
   get 'admin', to: 'admin/users#index'
 
   # Some default routes prepared for JS request
-  resources :products
+  resources :products, only: [:index, :create, :update, :new, :edit, :destroy] do
 
-  resources :goods do
-
-    resources :upstreams do
-      resources :contact, controller: 'upstream/contacts', only: [:update, :create, :destroy], shallow: true
+    collection do
+      get :search
     end
 
   end
 
-  resources :customers, only: [:update, :create, :destroy, :new, :show, :index] do
+  resources :customers, only: [:update, :create, :destroy, :show, :index] do
     resources :contacts, controller: 'customer/contacts', only: [:update, :create, :destroy], shallow: true
   end
 

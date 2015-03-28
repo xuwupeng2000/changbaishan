@@ -111,6 +111,9 @@ GEM
     jquery-rails (3.1.2)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
+    js-routes (1.0.0)
+      railties (>= 3.2)
+      sprockets-rails
     json (1.8.2)
     kaminari (0.16.3)
       actionpack (>= 3.0.0)
@@ -207,6 +210,8 @@ GEM
       sprockets (~> 2.8, < 3.0)
       sprockets-rails (~> 2.0)
     secure_headers (2.0.0)
+    select2-rails (3.5.9.3)
+      thor (~> 0.14)
     sextant (0.2.4)
       rails (>= 3.2)
     shoulda-matchers (2.8.0)
@@ -289,6 +294,7 @@ DEPENDENCIES
   haml
   jbuilder (~> 2.0)
   jquery-rails
+  js-routes
   mailcatcher
   ng-rails-csrf
   notify
@@ -303,6 +309,7 @@ DEPENDENCIES
   rspec-rails
   sass-rails (~> 4.0.3)
   secure_headers
+  select2-rails
   sextant
   shoulda-matchers
   simple_form

@@ -11,8 +11,10 @@
  * file per style scope.
  *
  *= require _base
+ *= require select2
  *= require_tree ./configs
  *= require_tree ./components
+ *= require_tree ./pages
  *= require_self
 
 

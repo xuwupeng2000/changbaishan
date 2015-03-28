@@ -1,0 +1,2 @@
+$("#container-edit-user-<%= @user.id %>").html("<%= escape_javascript(render partial: "admin/users/modals/edit_user", locals: {user: @user}) %>");
+$("#modal-edit-user-<%= @user.id %>").modal('show')

@@ -12,6 +12,14 @@ Product::Category.where(name: 'Other').first_or_create do |cate|
   cate.name = 'Other'
 end
 
+Product::Category.where(name: 'Dairy').first_or_create do |cate|
+  cate.name = 'Dairy'
+end
+
+Product::Category.where(name: 'Wine').first_or_create do |cate|
+  cate.name = 'Wine'
+end
+
 admin = User.where(email: "xuwupeng2000@gmail.com").first_or_create do |user|
   user.first_name = 'Jack'
   user.last_name = 'Wu'

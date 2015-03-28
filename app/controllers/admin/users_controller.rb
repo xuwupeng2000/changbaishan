@@ -13,9 +13,17 @@ class Admin::UsersController <  Admin::BaseController
 
   def update
     @user = User.find(params[:id])
-    @user.update_attributes(user_params)
 
-    redirect_to admin_users_path
+    respond_to do |fmt| 
+      fmt.js {
+        if @user.update_attributes(user_params)
+          flash[:notice] = 'User has been updated successfully'
+          redirect_to admin_users_path
+        else
+          render :update
+        end
+      }
+    end
   end
 
   # Pending feature

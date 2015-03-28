@@ -6,6 +6,8 @@ class CreateProducts < ActiveRecord::Migration
       t.string :name
       t.text :description
       t.decimal :weight
+      t.decimal  "purchase_price"
+      t.decimal  "selling_price"
       t.boolean :is_public , default: false
       t.string :state
       t.datetime :deleted_at

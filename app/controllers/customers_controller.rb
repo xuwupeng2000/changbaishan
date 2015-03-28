@@ -4,6 +4,8 @@ class CustomersController < ApplicationController
 
   before_action :authenticate_user
 
+  layout "table", only: [:index]
+
   def index
     unless params[:filter].blank?
       keyword = "%#{ params[:filter] }%"
@@ -12,9 +14,11 @@ class CustomersController < ApplicationController
       scope = Customer.includes(:customer_contacts).all
     end
     @customers = smart_listing_create(:customers, scope, partial: "customers/listing")
+    @new_customer = Customer.new
   end
 
   def show
+    @new_contact = Customer::Contact.new
     @customer = Customer.includes(:customer_contacts).find(params[:id])
     gon.customer          = @customer
     gon.customer_contacts = @customer.customer_contacts.order('updated_at DESC')
@@ -60,11 +64,12 @@ class CustomersController < ApplicationController
     @customer.user = current_user
 
     respond_to do |fmt|
-      fmt.html {
+      fmt.js {
         if @customer.save
           flash[:notice] = 'Customer has been create, more detail can be added within this page'
           redirect_to customer_path(@customer)
         else
+          @new_customer = @customer
           render :new
         end
       }

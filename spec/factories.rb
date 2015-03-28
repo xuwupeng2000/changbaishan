@@ -11,7 +11,7 @@ FactoryGirl.define do
     weight { 9 }
     is_public {false}
 
-    product_category
+    product_category { Product::Category.first || FactoryGirl.create(:product_category) }
     user
   end
 
