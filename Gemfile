@@ -70,4 +70,5 @@ group :development, :test do
   gem "bullet"
   gem 'foreman'
   gem 'thin'
+  gem 'capistrano-rvm'
 end

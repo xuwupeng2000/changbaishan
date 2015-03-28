@@ -11,6 +11,8 @@ module Changbaishan
     config.assets.paths << Rails.root.join("vendor","assets","bower_components")
     config.autoload_paths += %W( #{Rails.root}/lib/ )
 
+    config.secret_key = '5846bc8cfae062a94118718946f12973059a35cc47b28189113c438d72645d8b4d40ef7344d2c9910e714c663190cf7e4a01e82d282a1a6bc7df83b828f71f9a'
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

@@ -58,6 +58,9 @@ GEM
     capistrano-rails (1.1.2)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
+    capistrano-rvm (0.1.2)
+      capistrano (~> 3.0)
+      sshkit (~> 1.2)
     capistrano-stats (1.1.1)
     choice (0.1.7)
     coderay (1.1.0)
@@ -283,6 +286,7 @@ DEPENDENCIES
   bower-rails
   bullet
   capistrano-rails
+  capistrano-rvm
   coffee-rails (~> 4.0.0)
   devise
   email_validator

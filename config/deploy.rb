@@ -6,6 +6,7 @@ set :repo_url, 'git@github.com:xuwupeng2000/changbaishan.git'
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
+set :branch, ENV["branch"]
 
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, '/home/deploy/changbaishan'
@@ -44,5 +45,6 @@ namespace :deploy do
       # end
     end
   end
+
 
 end
