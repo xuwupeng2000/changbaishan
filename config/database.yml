@@ -21,6 +21,10 @@ default: &default
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
 
+staging:
+  <<: *default
+  database: changbaishan_staging
+
 development:
   <<: *default
   database: changbaishan_development
