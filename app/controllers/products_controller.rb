@@ -48,7 +48,7 @@ class ProductsController < ApplicationController
     @product.is_public = false
 
     if @product.save
-      flash[:notice] = "New product #{product.name} has been created successfully"
+      flash[:notice] = "New product #{@product.name} has been created successfully"
       redirect_to products_path
     else
       render :new
@@ -56,7 +56,11 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    
+    @product = Product.find(params[:id])
+    @product.destroy
+
+    flash[:notice] = 'Product has been removed from your repo'
+    redirect_to products_path
   end
 
   def search
