@@ -17,6 +17,7 @@ class CustomersController < ApplicationController
   end
 
   def show
+    @new_contact = Customer::Contact.new
     @customer = Customer.includes(:customer_contacts).find(params[:id])
     gon.customer          = @customer
     gon.customer_contacts = @customer.customer_contacts.order('updated_at DESC')

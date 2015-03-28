@@ -8,8 +8,8 @@
   border-radius: 3px;
 
   position: fixed;
-  left: 15%;
-  right: 15%;
+  left: 22%;
+  right: 22%;
   top: 15%;
 }
 
@@ -19,6 +19,7 @@
   background-color: #e6f3fa;
   border-radius: 0;
   border-top: 1px solid #d6ebf6;
+  min-height: 32px;
 }
 
 .modal-backdrop {
@@ -31,6 +32,7 @@
 }
 
 .modal {
+
 }
 
 .modal-header {
