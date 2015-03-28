@@ -19,7 +19,16 @@ class ProductsController < ApplicationController
   end
 
   def create
-    
+    @product = Product.new(product_params)
+    @product.user = current_user
+    @product.is_public = false
+
+    if @product.save
+      flash[:notice] = "New product #{product.name} has been created successfully"
+      redirect_to products_path
+    else
+      render :new
+    end
   end
 
   def destroy
@@ -38,6 +47,12 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new()
+  end
+
+  private
+
+  def product_params
+    params.required(:product).permit(:product_category_id, :name, :weight, :purchase_price, :selling_price, :description)
   end
 
 end

@@ -1,4 +1,22 @@
 angular.module('ye').controller("ProductController", [ '$scope', 'Restangular', 'toaster', ($scope, Restangular, toaster) ->
   $('.js-select2').select2()
+
+  $scope.searchProducts = (keyword) ->
+    $scope.hideSearchResults = false
+    products = Restangular.allUrl('products/search')
+    products.getList({query: {keyword: keyword}}).then(
+      (products) ->
+        $scope.products = products
+      (err) ->
+    )
+
+  $scope.updateNewProduct = (product)->
+    $scope.newProduct = product
+    $scope.hideSearchResults = true
+    toaster.pop('success', "success:", "Product template has been applied.")
+
+  $scope.hideElement = (hideVar)->
+    $scope.hideSearchResults = true
+
 ])
 
