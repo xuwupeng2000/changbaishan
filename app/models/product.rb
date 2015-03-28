@@ -5,7 +5,7 @@ class Product < ActiveRecord::Base
   belongs_to :product_category, class_name: 'Product::Category'
 
   validates_presence_of :user, :name, :product_category 
-  validates_numericality_of :selling_price, :purchase_price, message: 'has to be a number and greater than 0', greater_than: 0, unless: Proc.new { |product| product.is_public == true }
+  validate :validate_proper_prices
 
   state_machine :state, :initial => :active do
     event :activate do
@@ -15,5 +15,14 @@ class Product < ActiveRecord::Base
     event :archive do
       transition all => :archived
     end
+  end
+
+  private
+
+  def validate_proper_prices
+    return if is_public == true
+
+    errors.add(:selling_price, 'need to be a price')  unless selling_price && selling_price > 0
+    errors.add(:purchase_price, 'need to be a price') unless purchase_price && purchase_price > 0
   end
 end

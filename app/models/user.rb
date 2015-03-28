@@ -6,9 +6,9 @@ class User < ActiveRecord::Base
 
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :product
-  has_many :customer
-  has_many :order
+  has_many :products
+  has_many :customers
+  has_many :orders
 
   validates_presence_of :first_name, :last_name
   validates_uniqueness_of :email, case_sensitive: true

@@ -1,0 +1,39 @@
+= smart_listing_controls_for(:products) do
+  .top-actions
+    .filter.input-append.search-inline-form
+      = text_field_tag :filter, '', class: "search", placeholder: "Search name, description", autocomplete: "off"
+      %button.btn.btn-success{type: "submit"}
+        = icon 'search'
+
+    .action= link_to 'Add new product', new_admin_product_path, class: 'btn btn-success'
+
+- unless smart_listing.empty?
+  %table.table.table-hover.table-condensed
+    %thead
+      %th Product Name
+      %th Description
+      %th= smart_listing.sortable "Weight", :weight
+      %th= smart_listing.sortable "Purchase Price", :purchase_price
+      %th= smart_listing.sortable "Selling Price", :selling_price
+      %th= smart_listing.sortable "Product Category", :category
+      %th Actions
+    %tbody
+      - smart_listing.collection.each do |prod|
+        %tr
+          %td= prod.name
+          %td= prod.description.truncate(20)
+          %td= prod.weight
+          %td= prod.purchase_price
+          %td= prod.selling_price
+          %td= prod.product_category.name
+          %td
+            = link_to 'Edit', edit_product_path(prod), class: 'btn btn-primary'
+
+  .pagination
+    = smart_listing.paginate
+    = smart_listing.pagination_per_page_links
+- else
+
+  .clearfix
+
+  %p.warning.sl-no-record No records!

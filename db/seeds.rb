@@ -29,8 +29,8 @@ end
 
 admin.add_role :admin
 
-20.times do
-  FactoryGirl.create(:product)
+10.times do
+  FactoryGirl.create(:product, user: admin)
 end
 
 20.times do 
