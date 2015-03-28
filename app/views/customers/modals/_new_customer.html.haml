@@ -1,0 +1,24 @@
+.modal.fade{ id: "modal-new-customer"}
+  .modal-content
+    .modal-header
+      %button.close{:type => 'button', :'data-dismiss' => 'modal', :'aria-hidden' => 'true'}
+        = icon 'times'
+
+      %h3 Add New Customer
+
+    .row
+      .col-lg-8
+        = simple_form_for @new_customer, url: customers_path, remote: true do |f|
+          = f.error_notification
+
+          .form-inputs
+            = f.input :name
+            = f.input :address
+
+          .form-actions
+            = f.button :submit, "Save"
+            %a.btn.btn-default{:'data-dismiss' => 'modal', :'aria-hidden' => 'true'}
+              Cancel
+
+    .modal-footer
+

@@ -24,7 +24,6 @@
         %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
           Customer
         %ul.dropdown-menu
-          %li.dropdown-entry= link_to "New Customer", new_customer_path
           %li.dropdown-entry= link_to "List of Customers", customers_path
 
       - if admin?

@@ -73,7 +73,7 @@ Rails.application.routes.draw do
 
   end
 
-  resources :customers, only: [:update, :create, :destroy, :new, :show, :index] do
+  resources :customers, only: [:update, :create, :destroy, :show, :index] do
     resources :contacts, controller: 'customer/contacts', only: [:update, :create, :destroy], shallow: true
   end
 

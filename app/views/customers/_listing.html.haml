@@ -5,7 +5,9 @@
       %button.btn.btn-success{type: "submit"}
         = icon 'search'
 
-    .action= link_to 'Add new customer', new_customer_path, class: 'btn btn-success'
+    .action
+      %a.btn.btn-primary{:type => 'button', :'data-toggle' => 'modal', 'data-target' => "#modal-new-customer"}
+        Add new customer
 
 - unless smart_listing.empty?
   %table.table.table-hover.table-responsive
