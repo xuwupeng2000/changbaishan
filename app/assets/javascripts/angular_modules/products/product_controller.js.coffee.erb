@@ -1,4 +1,5 @@
 angular.module('ye').controller("ProductController", [ '$scope', 'Restangular', 'toaster', ($scope, Restangular, toaster) ->
+  $scope.newProduct = gon.product
 
   $scope.searchProducts = (keyword) ->
     $scope.hideSearchResults = false

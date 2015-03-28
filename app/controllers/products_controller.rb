@@ -1,11 +1,35 @@
 class ProductsController < ApplicationController
 
-  def index
+  include SmartListing::Helper::ControllerExtensions
+  helper  SmartListing::Helper
 
+  layout "table", only: [:index]
+
+  def index
+    unless params[:filter].blank?
+      keyword = "%#{ params[:filter] }%"
+      scope = current_user.products.where{ ( name.like keyword ) | ( description.like keyword )}
+    else
+      scope = current_user.products
+    end
+    @products = smart_listing_create(:products, scope, partial: "products/listing")
+  end
+
+  def edit
+    @product = Product.find(params[:id])
+    gon.product = @product
   end
 
   def update
-    
+    @product = Product.find(params[:id])
+
+    if @product.update_attributes(product_params)
+      flash[:success] = 'Product has been updated successfully'
+      redirect_to products_path
+    else
+      gon.product = @product
+      render :edit
+    end
   end
 
   def show
@@ -47,6 +71,7 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new()
+    gon.product = @product
   end
 
   private

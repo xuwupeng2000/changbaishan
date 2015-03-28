@@ -4,7 +4,7 @@
   .row
     .col-lg-6
       .form-inputs
-        = f.input :product_category_id, collection: Product::Category.all.map, include_blank: false, input_html: { class: 'js-select2 select2', 'ng-model'=>'newProduct.product_category_id' }
+        = f.input :product_category_id, collection: Product::Category.all, include_blank: false, input_html: { 'ng-model'=>'newProduct.product_category_id' }
         = f.input :name, autofocus: true, required: true, input_html: { 'ng-model' => 'newProduct.name' }
         = f.input :weight, as: :string, input_html: { 'ng-model' => 'newProduct.weight' }
         = f.hint  'Weight is calculated by KG in the system'
@@ -20,4 +20,4 @@
     .col-lg-12
       .form-actions.pull-right
         = f.button :submit, "Save"
-        = link_to 'Cancel', admin_products_path
+        = link_to 'Cancel', products_path

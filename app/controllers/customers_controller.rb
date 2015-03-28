@@ -67,7 +67,7 @@ class CustomersController < ApplicationController
       fmt.js {
         if @customer.save
           flash[:notice] = 'Customer has been create, more detail can be added within this page'
-          redirect_to customer_path(@customer)
+          js_redirect_to(customer_path(@customer))
         else
           @new_customer = @customer
           render :new
