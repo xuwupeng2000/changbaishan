@@ -7,6 +7,8 @@ class Product < ActiveRecord::Base
   validates_presence_of :user, :name, :product_category 
   validate :validate_proper_prices
 
+  default_scope { where(state: 'active') }
+
   state_machine :state, :initial => :active do
     event :activate do
         transition all => :active

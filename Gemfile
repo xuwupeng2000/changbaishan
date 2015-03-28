@@ -57,7 +57,7 @@ gem "paranoia", "~> 2.0"
 group :development, :test do
   gem 'mailcatcher'
   gem 'spring'
-  gem 'capistrano-rails', group: :development
+  gem 'capistrano-rails'
   gem 'pry-rails'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
