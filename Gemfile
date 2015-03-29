@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'unicorn'
 gem 'rails', '4.1.9'
 gem 'pg'
+gem 'thin'
 
 # JSON
 gem 'active_model_serializers'
@@ -69,6 +70,5 @@ group :development, :test do
   gem "rails-erd"
   gem "bullet"
   gem 'foreman'
-  gem 'thin'
   gem 'capistrano-rvm'
 end
