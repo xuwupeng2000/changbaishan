@@ -1,38 +1,25 @@
 @import './configs/_colors';
 
-.modal-content {
-  background-clip: padding-box;
-  background-color: white;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 6px;
-  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
-  margin-left: 16%;
-  margin-top: 10%;
-  outline: 0 none;
-  position: relative;
-  width: 66%;
-  min-height: 366px;
-}
-
-.modal-footer {
-  border-top: 0;
-  padding: 5px;
-  text-align: right;
-}
-
 .modal-backdrop {
   background-color: $figured-deep-blue;
   position: inherit;
 }
 
-.modal-content {
-  border-radius: 0;
-}
-
-.modal {
-
-}
-
 .modal-header {
-  border: 0;
+  border-bottom: 1px solid #e5e5e5;
+  border-radius: 3px;
+}
+
+.modal-content {
+  position:absolute;
+  top:10%;
+  left:20%;
+  right:20%;
+}
+
+.modal-footer {
+  background-color: #e6f3fa;
+  border-top: 1px solid #d6ebf6;
+  border-radius: 3px;
+  min-height: 46px;
 }

@@ -12,6 +12,14 @@ Product::Category.where(name: 'Other').first_or_create do |cate|
   cate.name = 'Other'
 end
 
+Product::Category.where(name: 'Dairy').first_or_create do |cate|
+  cate.name = 'Dairy'
+end
+
+Product::Category.where(name: 'Wine').first_or_create do |cate|
+  cate.name = 'Wine'
+end
+
 admin = User.where(email: "xuwupeng2000@gmail.com").first_or_create do |user|
   user.first_name = 'Jack'
   user.last_name = 'Wu'
@@ -21,8 +29,8 @@ end
 
 admin.add_role :admin
 
-20.times do
-  FactoryGirl.create(:product)
+10.times do
+  FactoryGirl.create(:product, user: admin)
 end
 
 20.times do 

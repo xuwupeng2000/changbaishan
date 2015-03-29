@@ -4,7 +4,10 @@ class Product < ActiveRecord::Base
   belongs_to :user
   belongs_to :product_category, class_name: 'Product::Category'
 
-  validates_presence_of :user, :name, :product_category
+  validates_presence_of :user, :name, :product_category 
+  validate :validate_proper_prices
+
+  default_scope { where(state: 'active') }
 
   state_machine :state, :initial => :active do
     event :activate do
@@ -14,5 +17,14 @@ class Product < ActiveRecord::Base
     event :archive do
       transition all => :archived
     end
+  end
+
+  private
+
+  def validate_proper_prices
+    return if is_public == true
+
+    errors.add(:selling_price, 'need to be a price')  unless selling_price && selling_price > 0
+    errors.add(:purchase_price, 'need to be a price') unless purchase_price && purchase_price > 0
   end
 end

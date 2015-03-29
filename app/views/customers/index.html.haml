@@ -1,6 +1,10 @@
-%h3
+%h2
   Customer Management
 
 .row
   .col-lg-12
     = smart_listing_render(:customers)
+
+
+%div{ id: "container-new-customer" }
+  = render partial: "customers/modals/new_customer"

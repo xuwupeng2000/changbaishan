@@ -13,18 +13,17 @@
           %li.dropdown-entry= link_to "New Orders", new_order_path
           %li.dropdown-entry= link_to "List of Orders", orders_path
 
-      %li.dropdown.nav-tab{class: (params[:controller] =~ /^good/ ? 'active' : nil)}
+      %li.dropdown.nav-tab{class: (params[:controller] =~ /^product/ ? 'active' : nil)}
         %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
           Product
         %ul.dropdown-menu
-          %li.dropdown-entry= link_to "New Products", new_good_path
-          %li.dropdown-entry= link_to "Products Overview", goods_path
+          %li.dropdown-entry= link_to "New Products", new_product_path
+          %li.dropdown-entry= link_to "Products Overview", products_path
 
       %li.dropdown.nav-tab{class: (params[:controller] =~ /^customer/ ? 'active' : nil)}
         %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
           Customer
         %ul.dropdown-menu
-          %li.dropdown-entry= link_to "New Customer", new_customer_path
           %li.dropdown-entry= link_to "List of Customers", customers_path
 
       - if admin?

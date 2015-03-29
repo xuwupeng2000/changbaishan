@@ -52,17 +52,6 @@ ActiveRecord::Schema.define(version: 20150313022655) do
   add_index "deliverables", ["name"], name: "index_deliverables_on_name", using: :btree
   add_index "deliverables", ["tracking_number"], name: "index_deliverables_on_tracking_number", using: :btree
 
-  create_table "goods", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "product_id"
-    t.integer  "upstream_id"
-    t.decimal  "purchase_price"
-    t.decimal  "selling_price"
-    t.datetime "deleted_at"
-  end
-
-  add_index "goods", ["deleted_at"], name: "index_goods_on_deleted_at", using: :btree
-
   create_table "orders", force: true do |t|
     t.integer  "user_id"
     t.integer  "customer_id"
@@ -88,6 +77,8 @@ ActiveRecord::Schema.define(version: 20150313022655) do
     t.string   "name"
     t.text     "description"
     t.decimal  "weight"
+    t.decimal  "purchase_price"
+    t.decimal  "selling_price"
     t.boolean  "is_public",           default: false
     t.string   "state"
     t.datetime "deleted_at"
@@ -116,21 +107,6 @@ ActiveRecord::Schema.define(version: 20150313022655) do
     t.decimal  "value"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "upstream_contacts", force: true do |t|
-    t.integer "upstream_id"
-    t.string  "name"
-    t.string  "detail"
-  end
-
-  add_index "upstream_contacts", ["name"], name: "index_upstream_contacts_on_name", using: :btree
-
-  create_table "upstreams", force: true do |t|
-    t.integer "user_id"
-    t.string  "name"
-    t.string  "address"
-    t.text    "description"
   end
 
   create_table "users", force: true do |t|

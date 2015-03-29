@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'unicorn'
 gem 'rails', '4.1.9'
 gem 'pg'
+gem 'thin'
 
 # JSON
 gem 'active_model_serializers'
@@ -12,6 +13,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
+gem "select2-rails"
+gem "js-routes"
 
 # Addon of Assets Pipleline
 gem 'bower-rails'
@@ -43,7 +46,7 @@ gem 'email_validator'
 # ORM wrapper
 gem "squeel"
 
-# Index magic
+# Index view magic
 gem 'smart_listing'
 
 # State machine
@@ -55,7 +58,7 @@ gem "paranoia", "~> 2.0"
 group :development, :test do
   gem 'mailcatcher'
   gem 'spring'
-  gem 'capistrano-rails', group: :development
+  gem 'capistrano-rails'
   gem 'pry-rails'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
@@ -67,5 +70,5 @@ group :development, :test do
   gem "rails-erd"
   gem "bullet"
   gem 'foreman'
-  gem 'thin'
+  gem 'capistrano-rvm'
 end

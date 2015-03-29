@@ -12,8 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require underscore/underscore
+//= require backbone/backbone
 //= require bootstrap
 //= require smart_listing
+//= require select2
+//= require js-routes
 //= require angular/angular
 //= require angular-animate/angular-animate
 //= require angular-ui-router/release/angular-ui-router
