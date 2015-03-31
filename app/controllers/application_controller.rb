@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   def authenticate_user
     return if current_user
 
-    toaster =  { message: 'Log in please.', type: 'success' }
+    flash[:alert] = 'Login please'
     redirect_to new_user_session_path
   end
 

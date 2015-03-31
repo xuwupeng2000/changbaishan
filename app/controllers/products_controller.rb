@@ -1,7 +1,8 @@
 class ProductsController < ApplicationController
-
   include SmartListing::Helper::ControllerExtensions
   helper  SmartListing::Helper
+
+  before_action :authenticate_user
 
   layout "table", only: [:index]
 
