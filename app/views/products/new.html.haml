@@ -9,7 +9,7 @@
         :plain
           <div outside-click="hideElement(hideSearchResults)">
             <span>
-              <input ng-model='keyword' type="text" class="string form-control input inline-filter" autofocus="autofocus" aria-required="true" placeholder="Search product tempalte in DGB">
+              <input ng-change='searchProducts(keyword)' ng-model='keyword' type="text" class="string form-control input inline-filter" autofocus="autofocus" aria-required="true" placeholder="Search product tempalte in DGB">
               <button class="btn btn-success" ng-click='searchProducts(keyword)'> <i class="fa fa-search"></i> </button>
             </span>
 
