@@ -3,10 +3,12 @@
     = @product.name
 
 .row
-  .col-lg-7.light-border
-    = render partial: "admin/products/form"
-
-  .col-lg-4.light-border
+  .col-lg-12.light-border
     %p
       Product created by admin user will become a public product
       which can be used by everyone.
+
+.row
+  .col-lg-12
+    = render partial: "admin/products/form"
+

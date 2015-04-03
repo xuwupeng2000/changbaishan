@@ -5,23 +5,22 @@
       Add a New Product
 
   .row
-    .col-lg-8
-      .form-inputs
-        :plain
-          <div outside-click="hideElement(hideSearchResults)">
-            <span>
-              <input ng-change='searchProducts(keyword)' ng-model='keyword' type="text" class="string form-control input inline-filter" autofocus="autofocus" aria-required="true" placeholder="Search product tempalte in DGB">
-              <button class="btn btn-success" ng-click='searchProducts(keyword)'> <i class="fa fa-search"></i> </button>
-            </span>
-
-            <div class='ea-products' ng-hide='hideSearchResults'>
-              <ul class='search-results'> 
-                <li ng-repeat='product in products' class='search-result-row' ng-click='updateNewProduct(product)'> 
-                  <a> {{product.name}} </a>
-                </li>
-              </ul>
-            </div>
+    .col-lg-12
+      :plain
+        <div outside-click="hideElement(hideSearchResults)">
+          <div class='filter search-new-product-form'>
+            <input ng-change='searchProducts(keyword)' ng-model='keyword' type="text" class="form-control" autofocus="autofocus" aria-required="true" placeholder="Search product tempalte in DGB">
+            <button class="btn btn-success" ng-click='searchProducts(keyword)'> <i class="fa fa-search"></i> </button>
           </div>
+
+          <div class='ea-products' ng-hide='hideSearchResults'>
+            <ul class='search-results'> 
+              <li ng-repeat='product in products' class='search-result-row' ng-click='updateNewProduct(product)'> 
+                <a> {{product.name}} </a>
+              </li>
+            </ul>
+          </div>
+        </div>
 
   #user-product-form
     = render partial: "products/form"

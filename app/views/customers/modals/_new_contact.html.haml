@@ -8,17 +8,18 @@
 
     .row
       .col-lg-8
-        = simple_form_for @new_contact, url: customer_contacts_path(customer_id: @customer.id) do |f|
+        = simple_form_for @new_contact, url: customer_contacts_path(customer_id: @customer.id), html: { class: 'form-vertical' } do |f|
           = f.error_notification
 
-          .form-inputs
+          .col-lg-12
             = f.input :name, as: :select, collection: Customer::Contact::TYPES, autofocus: true, required: true, include_blank: false
             = f.input :detail, required: true
 
-          .form-actions
-            = f.button :submit, "Save"
-            %a.btn.btn-default{:'data-dismiss' => 'modal', :'aria-hidden' => 'true'}
-              Cancel
+          .col-lg-12
+            .form-actions
+              = f.button :submit, "Save"
+              %a.btn.btn-default{:'data-dismiss' => 'modal', :'aria-hidden' => 'true'}
+                Cancel
 
     .modal-footer
 

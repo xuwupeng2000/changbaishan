@@ -1,4 +1,4 @@
-= simple_form_for @product, html: { class: 'light-border' } do |f|
+= simple_form_for @product, html: { class: 'form-vertical' } do |f|
   = f.error_notification
 
   .row
@@ -20,4 +20,3 @@
     .col-lg-12
       .form-actions.pull-right
         = f.button :submit, "Save"
-        = link_to 'Cancel', products_path

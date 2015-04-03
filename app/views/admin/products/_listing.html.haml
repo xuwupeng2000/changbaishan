@@ -1,7 +1,7 @@
 = smart_listing_controls_for(:products) do
   .top-actions
     .filter.input-append.search-inline-form
-      = text_field_tag :filter, '', class: "search", placeholder: "Search name, description or id here", autocomplete: "off"
+      = text_field_tag :filter, '', class: "form-control", placeholder: "Search name, description or id here", autocomplete: "off"
       %button.btn.btn-success{type: "submit"}
         = icon 'search'
 
@@ -18,7 +18,6 @@
       %th= smart_listing.sortable "Product Category", :category
       %th= smart_listing.sortable "Is Public Product ?", :is_public
       %th= smart_listing.sortable "Product Status", :state
-      %th Actions
     %tbody
       - smart_listing.collection.each do |prod|
         %tr
@@ -32,6 +31,7 @@
           %td.is-state= prod.state
           %td
             = link_to 'Edit', edit_admin_product_path(prod), class: 'btn btn-primary'
+          %td
             - if prod.archived?
               = link_to 'Activate', activate_admin_product_path(prod), method: :put, class: 'btn btn-primary'
             - else

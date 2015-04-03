@@ -1,12 +1,8 @@
 @import './configs/_colors';
 
-form {
-
-  abbr {
-    display:none;
-  }
-
-} 
+abbr {
+  display:none;
+}
 
 .form-vertical {
 
@@ -48,5 +44,21 @@ form {
 
 
 .form-actions {
-  margin-top: 32px;
+  margin: 32px 0;
+}
+
+.search-inline-form {
+  float: right;
+  margin-bottom: 28px;
+
+  .form-control {
+    display: inline-block;
+    width: 388px;
+  }
+
+}
+
+span.hint {
+  color: $light-gray;
+  margin-bottom: 7px;
 }

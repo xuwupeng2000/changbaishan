@@ -7,19 +7,20 @@
       %h3 Edit User
 
     .row
-      .col-lg-8
-        = simple_form_for(user, url: admin_user_path(user), remote: true, html: { class: 'form-horizontal', method: :put}) do |f|
-          = f.error_notification
+      .col-lg-10.col-lg-offset-1
+        = simple_form_for user, url: admin_user_path(user), remote: true, html: { class: 'form-vertical', method: :put} do |form|
+          = form.error_notification
 
-          .form-inputs
-            = f.input :first_name, autofocus: true, required: true
-            = f.input :last_name, required: true
-            = f.input :email, required: true
+          .col-lg-12
+            = form.input :first_name, autofocus: true, required: true
+            = form.input :last_name, required: true
+            = form.input :email, required: true
 
-          .form-actions
-            = f.button :submit, "Update"
-            %a.btn.btn-default{:'data-dismiss' => 'modal', :'aria-hidden' => 'true'}
-              Cancel
+          .col-lg-12
+            .form-actions
+              = form.button :submit, "Update"
+              %a.btn.btn-default{:'data-dismiss' => 'modal', :'aria-hidden' => 'true'}
+                Cancel
 
     .modal-footer
 

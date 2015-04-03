@@ -17,11 +17,8 @@
 }
 
 .light-border {
-  border: 1px solid $border-gray;
-  border-radius: 5px
-}
-
-.light-border-with-no-margin {
+  border-radius: 3;
+  padding: 32px;
   border: 1px solid $border-gray;
 }
 

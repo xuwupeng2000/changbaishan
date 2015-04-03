@@ -13,9 +13,11 @@ nav.topnav {
 
       color: $dark_gray;
       font-weight: 600;
-      line-height: 25px;
+      line-height: 32px;
 
       background-color: unset;
+
+      text-transform: uppercase;
 
       &:hover, &:focus {
         color: $mid-green;
@@ -26,10 +28,27 @@ nav.topnav {
 
 }
 
-.nav .open {
+.navbar-default .navbar-nav .open {
 
-  a, a:hover, a:focus {
+  a:hover {
     color: $mid-green;
+    background-color: unset;
+  }
+
+  a:focus, a:active {
+    background-color: unset;
+  }
+
+}
+
+.navbar-default .navbar-nav .active {
+
+  a:hover {
+    color: $mid-green;
+    background-color: unset;
+  }
+
+  a:focus, a:active {
     background-color: unset;
   }
 
@@ -42,6 +61,9 @@ nav.topnav {
 
   .dropdown-entry {
     a {
+      width: 228px;
+
+      border-radius: 0;
       padding: 7px;
     }
 
