@@ -1,5 +1,6 @@
-%h2
-  = @product.name
+= content_for :header do
+  %h2
+    = @product.name
 
 .row
   .col-lg-7.light-border

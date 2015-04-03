@@ -1,6 +1,12 @@
 %div{ 'ng-controller' => 'CustomerController' }
 
-  %h2 {{ customer.name }}
+
+  = content_for :header do
+    %h2
+      Customer
+
+
+  %h3 {{ customer.name }}
 
   .row
     .pull-right

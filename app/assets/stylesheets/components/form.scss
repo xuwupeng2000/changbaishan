@@ -1,5 +1,52 @@
 @import './configs/_colors';
 
+form {
+
+  abbr {
+    display:none;
+  }
+
+} 
+
+.form-vertical {
+
+  .input {
+    margin-top: 7px;
+    margin-bottom: 7px;
+  }
+
+  .input:first-child {
+    margin-top: 0;
+  }
+
+  .input:last-child {
+    margin-bottom: 7px;
+  }
+
+}
+
+.form-horizontal {
+
+  .input {
+    margin-top: 7px;
+    margin-bottom: 7px;
+  }
+
+  .input:first-child {
+    margin-top: 0;
+  }
+
+  .input:last-child {
+    margin-bottom: 7px;
+  }
+
+}
+
 .form-control {
-  height: 32px;
+  border-radius: 0;
+}
+
+
+.form-actions {
+  margin-top: 32px;
 }

@@ -1,7 +1,8 @@
 %div{ 'ng-controller' => 'ProductController' }
 
-  %h2
-    Edit Product
+  = content_for :header do
+    %h2
+      Customer Management
 
   #user-product-form
     = render partial: "products/form"

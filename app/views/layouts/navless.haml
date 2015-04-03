@@ -14,27 +14,7 @@
 
   %body{ 'ng-app'=>'ye', 'ui-view'=>'', 'ng-cloak'=>'' }
     = render partial: "/shared/flash_messages"
-    = render partial: "/shared/topnav"
-
-    .section-header
-      = content_for :header
 
     .main
       .container
         = yield
-
-    %footer.footer
-      .bottom-links
-        .container
-          .row
-            .col-sm-6.outline
-              %h5
-                About DGB
-            .col-sm-6.outline
-              %h5
-                Follow Us
-      %hr.divider
-        .container
-          .row
-            .col-sm-6
-              © 2015 qBit, All Rights Reserved.
