@@ -6,10 +6,10 @@ FactoryGirl.define do
   end
 
   factory :product do
-    name {Faker::App.name}
-    description {Faker::Lorem.paragraph}
+    name { Faker::App.name }
+    description { Faker::Lorem.paragraph }
     weight { 9 }
-    is_public {false}
+    is_public { true }
 
     product_category { Product::Category.first || FactoryGirl.create(:product_category) }
     user

@@ -12,13 +12,15 @@
 
     = favicon_link_tag 'dna.png'
 
-  %body{ 'ng-app'=>'ye' }
+  %body{ 'ng-app'=>'ye', 'ui-view'=>'', 'ng-cloak'=>'' }
     = render partial: "/shared/flash_messages"
     = render partial: "/shared/topnav"
-    .clearfix
 
-    .main{ 'ui-view'=>'', 'ng-cloak'=>'' }
-      .table-container
+    .section-header
+      = content_for :header
+
+    .main
+      .container
         = yield
 
     %footer.footer

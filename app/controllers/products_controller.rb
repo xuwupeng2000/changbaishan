@@ -1,7 +1,8 @@
 class ProductsController < ApplicationController
-
   include SmartListing::Helper::ControllerExtensions
   helper  SmartListing::Helper
+
+  before_action :authenticate_user
 
   layout "table", only: [:index]
 
@@ -64,7 +65,8 @@ class ProductsController < ApplicationController
   end
 
   def search
-    @products = Product.all
+    keyword = "%#{ params[:filter] }%"
+    @products = Product.includes(:product_category).where{( name.like keyword ) | ( description.like keyword )}
 
     respond_to do |fmt|
       fmt.json {

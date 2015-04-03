@@ -1,4 +1,6 @@
 class SessionsController < Devise::SessionsController
+  layout 'navless'
+
   # GET /resource/sign_in
   # def new
   #   super

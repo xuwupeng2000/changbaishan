@@ -6,7 +6,7 @@
   .search-results {
     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
     border-radius: 0 0 4px 4px;
-    margin: 4px 4px 4px 5px;
+    margin: -26px 4px 4px 22px;
     max-height: 200px;
     overflow-x: hidden;
     overflow-y: auto;
@@ -29,6 +29,14 @@
       }
     }
   } 
-
 }
 
+.search-new-product-form {
+  padding: 22px;
+
+  .form-control {
+    display: inline-block;
+    width: 388px;
+  }
+
+}

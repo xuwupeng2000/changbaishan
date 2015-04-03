@@ -8,26 +8,26 @@
 @import './configs/_colors';
 
 div {
-  padding: 5px;
-  margin: 5px;
-}
-
-span {
-  display: inline;
+  padding: 0;
+  margin: 0;
 }
 
 body {
+  padding-top: 60px;
+
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
 }
 
 a:hover, a:focus {
-  color: #23527c;
+  color: $mid-green;
   text-decoration: none;
 }
 
 footer {
+  margin-top: 80px;
   padding: 10px 0;
+
   background: $bg_dark;
   color: white;
   letter-spacing: 3px;
@@ -38,9 +38,4 @@ footer {
 
 li {
   list-style: none;
-}
-
-div {
-  padding: 0;
-  margin: 0;
 }

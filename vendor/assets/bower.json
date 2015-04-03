@@ -8,6 +8,7 @@
     "angular-flash-messages": "latest",
     "angularjs-toaster": "latest",
     "backbone": "latest",
-    "underscore": "latest"
+    "underscore": "latest",
+    "flat-ui": "latest"
   }
 }

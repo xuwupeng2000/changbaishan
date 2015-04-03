@@ -1,20 +1,24 @@
-%h2
-  = @user.name
+= content_for :header do
+  %h2
+    = @user.name
 
 .row
-  .col-lg-7.light-border
+  .col-lg-6
     %h4
       User Profile
 
     = simple_form_for @user, url: admin_user_path(@user) do |f|
-      .form-inputs
+      .col-lg-6.pull-left
         = f.input :first_name, autofocus: true, disabled: true
+      .col-lg-6.pull-right
         = f.input :last_name, disabled: true
+      .col-lg-12
         = f.input :email, disabled: true
 
-  .col-lg-4.light-border
+  .col-lg-5.col-lg-offset-1.light-border
     %h4
       Billing Infomation
+
 
 %hr
 
@@ -22,3 +26,4 @@
   .col-lg-12.light-border
     %h4
       Business Statistics
+

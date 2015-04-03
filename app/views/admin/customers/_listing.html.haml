@@ -1,6 +1,6 @@
 = smart_listing_controls_for(:customers) do
   .filter.input-append.search-inline-form
-    = text_field_tag :filter, '', class: "search", placeholder: "Search name, address, or id here", autocomplete: "off"
+    = text_field_tag :filter, '', class: "form-control", placeholder: "Search name, address, or id here", autocomplete: "off"
     %button.btn.btn-success{type: "submit"}
       = icon 'search'
 
@@ -10,18 +10,12 @@
       %th= smart_listing.sortable "Name", :name
       %th Address
       %th Customer ID
-      %th Customer of
     %tbody
       - smart_listing.collection.each do |customer|
         %tr
           %td= customer.name
           %td= customer.address
           %td= customer.id
-          - if customer.user
-            %td= link_to customer.user.name, admin_user_path(customer.user)
-          - else
-            %td
-              No corresponding user is found!
 
 
   .pagination

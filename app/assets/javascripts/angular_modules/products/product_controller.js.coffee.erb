@@ -2,10 +2,16 @@ angular.module('ye').controller("ProductController", [ '$scope', 'Restangular', 
   $scope.newProduct = gon.product
 
   $scope.searchProducts = (keyword) ->
+    # If search input is empty then stop searching and close result box
+    unless keyword.length > 0
+      $scope.hideSearchResults = true
+      return
+
     $scope.hideSearchResults = false
     products = Restangular.allUrl('products/search')
-    products.getList({query: {keyword: keyword}}).then(
+    products.getList({filter: keyword}).then(
       (products) ->
+        console.log(products)
         $scope.products = products
       (err) ->
     )

@@ -1,12 +1,12 @@
 = smart_listing_controls_for(:customers) do
   .top-actions
     .filter.input-append.search-inline-form
-      = text_field_tag :filter, '', class: "search", placeholder: "Search name, address, or contacts here", autocomplete: "off"
+      = text_field_tag :filter, '', class: "form-control", placeholder: "Search name, address, or contacts here", autocomplete: "off"
       %button.btn.btn-success{type: "submit"}
         = icon 'search'
 
     .action
-      %a.btn.btn-primary{:type => 'button', :'data-toggle' => 'modal', 'data-target' => "#modal-new-customer"}
+      %a.btn.btn-success{:type => 'button', :'data-toggle' => 'modal', 'data-target' => "#modal-new-customer"}
         Add new customer
 
 - unless smart_listing.empty?
@@ -15,7 +15,6 @@
       %th= smart_listing.sortable "Name", :name
       %th Address
       %th Contacts
-      %th Actions
     %tbody
       - smart_listing.collection.each do |customer|
         %tr

@@ -1,74 +1,76 @@
 @import './configs/_colors';
 
-.navbar-custom {
-  background-color: rgba(10, 10, 10, 0.9);
-  border: 0 none;
-  border-radius: 0;
-  font-family: "Roboto Condensed",sans-serif;
-  font-size: 13px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: white;
-  padding: 12px;
+
+nav.topnav {
+
+  li.nav-tab {
+    height: inherit;
+    padding-top: 12px;
+
+    a {
+      padding-bottom: 5px;
+      padding-top: 5px;
+
+      color: $dark_gray;
+      font-weight: 600;
+      line-height: 32px;
+
+      background-color: unset;
+
+      text-transform: uppercase;
+
+      &:hover, &:focus {
+        color: $mid-green;
+      }
+    }
+
+  }
+
 }
 
-.nav-tab.active {
-  background: white;
+.navbar-default .navbar-nav .open {
+
+  a:hover {
+    color: $mid-green;
+    background-color: unset;
+  }
+
+  a:focus, a:active {
+    background-color: unset;
+  }
+
 }
 
-li.active.nav-tab a {
-  color: $dark_gray;
+.navbar-default .navbar-nav .active {
+
+  a:hover {
+    color: $mid-green;
+    background-color: unset;
+  }
+
+  a:focus, a:active {
+    background-color: unset;
+  }
+
 }
 
-.topnav {
-  display: block;
-}
-
-.navbar-nav li a {
-  color: white;
-}
-
-.nav > li > a:hover, .nav > li > a:focus {
-  color: $dark_gray;
-}
-
-.navbar-custom .dropdown-menu {
-  background: none repeat scroll 0 0 rgba(26, 26, 26, 0.9);
-  border: 0 none;
-  border-radius: 0;
-  box-shadow: none;
+.dropdown-menu {
+  border-top: 2px solid $mid-green;
+  margin: 0;
   padding: 0;
-}
 
-.navbar-custom .dropdown-menu > li > a {
-  font-size: 12px;
-  letter-spacing: 2px;
-  padding: 11px 15px;
-}
+  .dropdown-entry {
+    a {
+      width: 228px;
 
-.navbar-header a {
-  color: white;
-  font-size: 18px;
-  left: 5%;
-  position: absolute;
-  top: 30%;
+      border-radius: 0;
+      padding: 7px;
+    }
 
-  :hover {
-    text-decoration: none;
+    a:focus, a:hover {
+      color: $mid-green;
+      background-color: $milk;
+    }
   }
-}
 
-.nav-tab-right {
-  float: right !important;
-}
-
-.navbar-custom .dropdown-menu > li > a {
-  font-size: 12px;
-  letter-spacing: 2px;
-  padding: 11px 15px;
-  color: white;
-
-  &:hover, &:focus {
-    color: $dark_gray;
-  }
 }
