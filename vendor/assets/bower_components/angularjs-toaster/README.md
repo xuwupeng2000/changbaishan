@@ -4,7 +4,7 @@ AngularJS-Toaster
 **AngularJS Toaster** is an AngularJS port of the **toastr** non-blocking notification jQuery library. It requires AngularJS v1.2.6 or higher and angular-animate for the CSS3 transformations. 
 (I would suggest to use /1.2.8/angular-animate.js, there is a weird blinking in newer versions.)
 
-### Current Version 0.4.10
+### Current Version 0.4.12
 
 ## Demo
 - Simple demo is at http://plnkr.co/edit/HKTC1a
@@ -55,6 +55,34 @@ bower install --save angularjs-toaster
 </div>
 ```
 
+### Close Button
+
+The Close Button's visibility can be configured at three different levels:
+
+* Globally in the config for all toast types:
+```html
+<toaster-container toaster-options="'close-button': true"></toaster-container>
+```
+
+* Per info-class type:
+By passing the close-button configuration as an object instead of a boolean, you can specify the global behavior an info-class type should have.
+```html
+<toaster-container toaster-options="{'close-button': { 'toast-warning': true, 'toast-error': false } }"></toaster-container>
+```
+If a type is not defined and specified, the default behavior for that type is false.
+
+* Per toast constructed via toaster.pop('success', "title", "text"):
+```html
+toaster.pop({
+                type: 'error',
+                title: 'Title text',
+                body: 'Body text',
+                showCloseButton: true
+            });
+```
+This option is given the most weight and will override the global configurations for that toast.  However, it will not persist to other toasts of that type and does not alter or pollute the global configuration.
+
+
 ### Other Options
 
 ```html
@@ -76,4 +104,3 @@ Copyright © 2013 [Jiri Kavulak](https://twitter.com/jirikavi).
 
 ## License 
 AngularJS-Toaster is under MIT license - http://www.opensource.org/licenses/mit-license.php
-

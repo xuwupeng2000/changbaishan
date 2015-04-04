@@ -1,0 +1,13 @@
+{
+  "name": "jquery-backstretch",
+  "_cacheHeaders": {
+    "ETag": "\"1bb20f83c29537def553ce591c11d9494469ca3d\"",
+    "Content-Length": "4233",
+    "Content-Type": "text/plain; charset=utf-8"
+  },
+  "_release": "e-tag:1bb20f83c",
+  "main": "index.js",
+  "_source": "https://raw.github.com/srobbin/jquery-backstretch/master/jquery.backstretch.min.js",
+  "_target": "*",
+  "_originalSource": "https://raw.github.com/srobbin/jquery-backstretch/master/jquery.backstretch.min.js"
+}
