@@ -1,8 +1,9 @@
 @import './configs/_colors';
 
 .login-box {
-  background-color: white;
   margin-top: 20%;
+
+  background-color: white;
   min-height: 488px;
 }
 
@@ -19,5 +20,12 @@
     margin: 0;
     padding: 0;
   
+  }
+
+  .main {
+    position: absolute;
+
+    height: 100%;
+    width: 100%;
   }
 }
