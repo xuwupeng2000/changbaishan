@@ -1,10 +1,26 @@
 @import './configs/_colors';
 
-.table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td {
-  border-top: 1px solid #dddddd;
-  line-height: 1.42857;
-  padding: 5px;
-  vertical-align: top;
+
+table.table {
+  tbody {
+    tr {
+    
+      td {
+        font-size: 12px;
+      }
+    
+    }
+  }
+
+  thead {
+    tr{
+    
+      th {
+        font-size: 12px;
+      }
+    
+    }
+  }
 }
 
 .sl-no-record.warning {
@@ -25,3 +41,5 @@
 .is-state {
   text-transform: capitalize;
 }
+
+
