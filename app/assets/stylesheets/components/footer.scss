@@ -1,0 +1,33 @@
+@import './configs/_colors';
+
+footer {
+  padding: 10px 0;
+
+  font-size: 14px;
+  background-color: $footer-bg;
+  border-top-color: rgba(0, 0, 0, 0.2);
+  color: $footer-font;
+ 
+  .about-dgb {
+
+    .about {
+      h5 {
+        padding: 0;
+      }
+    }
+  
+  }
+
+  .copy-right {
+    padding: 5px 12px;
+  }
+
+  .social-media-group {
+    a {
+      color: unset;
+      margin-left: 33px;
+    }
+  }
+}
+
+

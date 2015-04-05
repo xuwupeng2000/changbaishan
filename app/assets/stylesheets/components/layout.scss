@@ -16,13 +16,18 @@
 
 .section-header {
   padding: 35px 0;
+  padding-left: 256px;
 
   background-color: $milk;
 
   h2 {
-    margin-left: 256px;
     font-weight: 600;
     text-transform: uppercase;
+  }
+
+  .lead {
+    margin: 0 22px;
+    font-weight: 300;
   }
 }
 
