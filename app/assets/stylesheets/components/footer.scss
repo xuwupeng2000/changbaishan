@@ -27,6 +27,12 @@ footer {
       color: unset;
       margin-left: 33px;
     }
+
+    a:hover {
+      i {
+        transform: rotateY(180deg);
+      }
+    }
   }
 }
 
