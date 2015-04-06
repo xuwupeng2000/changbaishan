@@ -12,15 +12,9 @@
 
     = favicon_link_tag 'dna.png'
 
-  %body{ 'ng-app'=>'ye', 'ui-view'=>'', 'ng-cloak'=>'' }
+  %body.fullscreen{ 'ng-app'=>'ye', 'ui-view'=>'', 'ng-cloak'=>'' }
     = render partial: "/shared/flash_messages"
-    = render partial: "/shared/topnav"
 
-    .section-header
-      = content_for :header
-
-    .main
+    .main{ 'backstretch'=>'', 'url'=>"#{asset_path 'login_bg.jpg'}" }
       .container
         = yield
-
-  = render partial: "/shared/footer"

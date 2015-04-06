@@ -2,10 +2,30 @@
 
 .login-box {
   margin-top: 20%;
+
+  background-color: white;
   min-height: 488px;
 }
 
 
 .login-bg {
 
+}
+
+.fullscreen {
+  margin: 0;
+  padding: 0;
+
+  body {
+    margin: 0;
+    padding: 0;
+  
+  }
+
+  .main {
+    position: absolute;
+
+    height: 100%;
+    width: 100%;
+  }
 }

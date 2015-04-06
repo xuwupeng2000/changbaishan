@@ -20,21 +20,7 @@
       = content_for :header
 
     .main
-      .container
+      .col-lg-10.col-lg-offset-1
         = yield
 
-    %footer.footer
-      .bottom-links
-        .container
-          .row
-            .col-sm-6.outline
-              %h5
-                About DGB
-            .col-sm-6.outline
-              %h5
-                Follow Us
-      %hr.divider
-        .container
-          .row
-            .col-sm-6
-              © 2015 qBit, All Rights Reserved.
+  = render partial: "/shared/footer"

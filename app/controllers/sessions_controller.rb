@@ -1,5 +1,5 @@
 class SessionsController < Devise::SessionsController
-  layout 'navless'
+  layout 'fullscreen_bg'
 
   # GET /resource/sign_in
   # def new

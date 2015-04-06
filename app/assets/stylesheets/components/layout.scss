@@ -15,14 +15,22 @@
 }
 
 .section-header {
-  padding: 35px 0;
+  padding: 35px 256px;
 
   background-color: $milk;
 
   h2 {
-    margin-left: 256px;
-    font-weight: 600;
+    margin-top: 40px;
+
+    font-weight: 400;
     text-transform: uppercase;
+
+    text-align: right;
+  }
+
+  .lead {
+    margin: 0 22px;
+    font-weight: 300;
   }
 }
 
