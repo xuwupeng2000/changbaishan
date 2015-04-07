@@ -7,19 +7,22 @@
 
 .modal-header {
   border-bottom: 1px solid #e5e5e5;
-  border-radius: 3px;
+  border-radius: 0;
 }
 
 .modal-content {
   position:absolute;
-  top:10%;
-  left:20%;
-  right:20%;
+  border-radius: 0;
+
+  width: 1024px;
+
+  top: 15%;
+  left: 388px;
 }
 
 .modal-footer {
   background-color: #e6f3fa;
   border-top: 1px solid #d6ebf6;
-  border-radius: 3px;
+  border-radius: 0;
   min-height: 46px;
 }

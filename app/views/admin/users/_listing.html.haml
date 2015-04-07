@@ -1,6 +1,6 @@
 = smart_listing_controls_for(:users) do
   .filter.input-append.search-inline-form
-    = text_field_tag :filter, '', class: "search", placeholder: "Search name, email or id here", autocomplete: "off"
+    = text_field_tag :filter, '', class: "form-control", placeholder: "Search name, email or id here", autocomplete: "off"
     %button.btn.btn-success{type: "submit"}
       = icon 'search'
 
@@ -13,7 +13,6 @@
       %th User Last Logged In
       %th User ID
       %th= smart_listing.sortable "User Status", :state
-      %th Actions
     %tbody
       - smart_listing.collection.each do |user|
         %tr
@@ -26,14 +25,18 @@
           %td
             %a.btn.btn-primary{:type => 'button', :'data-toggle' => 'modal', 'data-target' => "#modal-edit-user-#{user.id}"}
               Edit
+          %td
             = link_to 'Detail', admin_user_path(user), class: 'btn btn-primary'
+
+            %div{ id: "container-edit-user-#{user.id}" }
+              = render partial: "admin/users/modals/edit_user", locals: {user: user}
+
+          %td
             - if user.disabled?
               = link_to 'Enable', enable_admin_user_path(user), method: :put, class: 'btn btn-primary'
             - else
               = link_to 'Disable', disable_admin_user_path(user), method: :put, class: 'btn btn-primary'
 
-            %div{ id: "container-edit-user-#{user.id}" }
-              = render partial: "admin/users/modals/edit_user", locals: {user: user}
 
 
   .pagination

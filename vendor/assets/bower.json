@@ -5,9 +5,8 @@
     "angular-xeditable": "latest",
     "angular-ui-router": "latest",
     "restangular": "latest",
-    "angular-flash-messages": "latest",
     "angularjs-toaster": "latest",
-    "backbone": "latest",
-    "underscore": "latest"
+    "underscore": "latest",
+    "angular-backstrech": "latest"
   }
 }

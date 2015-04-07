@@ -1,17 +1,19 @@
-%h2
-  Log in
+%div{ 'ng-controller'=>'LoginController' }
 
-.row
-  .col-lg-8
-    = simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'light-border form-vertical'}) do |f|
-      .form-inputs
-        = f.input :email, required: true, autofocus: true
-        = f.input :password, required: true
+  .row
+    .col-lg-5.col-lg-offset-3
+      .login-box
+        %h3
+          Login to Your Account
 
-        = f.input :remember_me, as: :boolean, :wrapper => :inline_checkbox
+        = simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-vertical'}) do |f|
+          .form-inputs
+            = f.input :email, required: true, autofocus: true
+            = f.input :password, required: true
 
-      .form-actions
-        = f.button :submit, "Log in"
+          .form-actions
+            = f.button :submit, "Log in"
 
-  .col-lg-3
-    = render "devise/shared/links"
+        %hr
+
+        = render "devise/shared/navless_links"

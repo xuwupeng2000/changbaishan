@@ -12,27 +12,15 @@
 
     = favicon_link_tag 'dna.png'
 
-  %body{ 'ng-app'=>'ye' }
+  %body{ 'ng-app'=>'ye', 'ui-view'=>'', 'ng-cloak'=>'' }
     = render partial: "/shared/flash_messages"
     = render partial: "/shared/topnav"
-    .clearfix
 
-    .main{ 'ui-view'=>'', 'ng-cloak'=>'' }
-      .table-container
+    .section-header
+      = content_for :header
+
+    .main
+      .col-lg-10.col-lg-offset-1
         = yield
 
-    %footer.footer
-      .bottom-links
-        .container
-          .row
-            .col-sm-6.outline
-              %h5
-                About DGB
-            .col-sm-6.outline
-              %h5
-                Follow Us
-      %hr.divider
-        .container
-          .row
-            .col-sm-6
-              © 2015 qBit, All Rights Reserved.
+  = render partial: "/shared/footer"

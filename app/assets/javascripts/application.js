@@ -22,10 +22,10 @@
 //= require angular-animate/angular-animate
 //= require angular-ui-router/release/angular-ui-router
 //= require angular-xeditable/dist/js/xeditable
-//= require lodash/dist/lodash.compat
+//= require lodash/lodash
 //= require restangular/dist/restangular
 //= require angular-rails-templates
-//= require angularjs-toaster/toaster.js
+//= require angularjs-toaster/toaster
 //= require_tree ./modules
 //= require ./angular_modules/hua_yue_ye_base
 //= require_tree ./angular_modules/directives

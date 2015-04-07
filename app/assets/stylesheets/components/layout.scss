@@ -1,0 +1,44 @@
+@import './configs/_colors';
+
+.main {
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  background-color: #fff;
+  position: relative;
+  z-index: 1;
+  min-height: 877px;
+}
+
+.row {
+  margin: 0;
+}
+
+.section-header {
+  padding: 35px 256px;
+
+  background-color: $milk;
+
+  h2 {
+    margin-top: 40px;
+
+    font-weight: 400;
+    text-transform: uppercase;
+
+    text-align: right;
+  }
+
+  .lead {
+    margin: 0 22px;
+    font-weight: 300;
+  }
+}
+
+.table-container {
+  padding: 88px
+}
+
+nav.topnav {
+  height: 60px;
+  margin: 0;
+}

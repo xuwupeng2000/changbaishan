@@ -1,6 +1,7 @@
-%h2
-  Edit Profile
+= content_for :header do
+  %h2
+    Edit Profile
 
 .row
-  .col-lg-8
+  .col-lg-8.col-lg-offset-2
     = render partial: "devise/registrations/form"
