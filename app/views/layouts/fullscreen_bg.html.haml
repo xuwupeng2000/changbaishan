@@ -15,6 +15,6 @@
   %body.fullscreen{ 'ng-app'=>'ye', 'ui-view'=>'', 'ng-cloak'=>'' }
     = render partial: "/shared/flash_messages"
 
-    .main{ 'backstretch'=>'', 'url'=>"#{asset_path 'login_bg.jpg'}" }
+    .main
       .container
         = yield
