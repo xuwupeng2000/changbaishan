@@ -1,6 +1,7 @@
 angular.module('ye').directive('jwAction', [() ->
   return {
     restrict: 'AE',
+    scope: {},
     templateUrl: 'angular_modules/templates/jw_action.html',
     link: (scope, element, attrs) ->
       scope.actionActive = false
