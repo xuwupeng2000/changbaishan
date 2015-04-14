@@ -28,6 +28,7 @@
 //= require angularjs-toaster/toaster
 //= require_tree ./modules
 //= require ./angular_modules/hua_yue_ye_base
+//= require_tree ./angular_modules/templates
 //= require_tree ./angular_modules/directives
 //= require_tree ./angular_modules/customers
 //= require_tree .
