@@ -1,1 +1,38 @@
-Action
+<div class="">
+
+  <div ng-switch='actionActive'>
+    <a class='jw-actions' ng-switch-when='false' ng-click='toggleActionCollection(true)'> 
+      <i class="fa fa-cubes"></i>
+      Actions
+    </a>
+
+    <ul ng-switch-when='true' class='jw-actions'>
+      <li ng-show='showurl' class='jw-action'>
+        <a ng-herf="{{ showurl }}"> 
+          <i class="fa fa-cube"></i> 
+          Show
+        </a>
+      </li>
+
+      <li ng-show='editurl' class='jw-action'>
+        <a ng-herf="{{ showurl }}">
+          <i class="fa fa-cube"></i>
+          Edit
+        </a>
+      </li>
+
+      <li ng-show='deleteurl' class='jw-action'>
+        <a ng-herf="{{ deleteurl }}">
+          <i class="fa fa-cube"></i>  
+          Remove
+        </a>
+      </li>
+
+      <li ng-click='toggleActionCollection(false)'> 
+        <i class="fa fa-times-circle"></i>
+      </li>
+
+    <ul>
+  </div>
+
+</div>
