@@ -1,11 +1,13 @@
-= content_for :header do
-  %h2
-    Customer Management
+%div{ 'ng-controller' => 'CustomersController' }
+  = content_for :header do
+    %h2
+      Customer Management
 
-.row
-  .col-lg-12
-    = smart_listing_render(:customers)
+  .row
+    .col-lg-12
+      :erb
+        <div class="gridStyle" ng-grid="gridOptions"> </div>
 
 
-%div{ id: "container-new-customer" }
-  = render partial: "customers/modals/new_customer"
+  %div{ id: "container-new-customer" }
+    = render partial: "customers/modals/new_customer"
