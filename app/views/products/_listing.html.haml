@@ -26,8 +26,13 @@
           %td= prod.selling_price
           %td= prod.product_category.name
           %td
-            :erb
-              <div jw-action showUrl=<%= edit_product_path(prod) %> deleteUrl=<%= product_path(prod) %> deleteConfirmation='<%= "Are you sure you want to remove #{prod.name}?" %>' > </div>
+            = link_to edit_product_path(prod), class: 'jw-action' do
+              <i class="fa fa-trash-o"></i>
+              Edit
+
+            = link_to product_path(prod), method: :delete, data: { confirm: "Are you sure you want to remove #{prod.name}?" }, class: 'jw-action' do
+              <i class="fa fa-pencil-square-o"></i>
+              Delete
 
   .pagination
     = smart_listing.paginate

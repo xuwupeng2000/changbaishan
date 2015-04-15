@@ -7,6 +7,6 @@
     "restangular": "latest",
     "angularjs-toaster": "latest",
     "underscore": "latest",
-    "angular-backstrech": "latest"
+    "ng-grid": "latest"
   }
 }

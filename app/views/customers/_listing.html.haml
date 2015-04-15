@@ -12,7 +12,7 @@
 - unless smart_listing.empty?
   %table.table.table-hover.table-responsive
     %thead
-      %th= smart_listing.sortable "Name", :name
+      %th Name
       %th Address
       %th Contacts
     %tbody
@@ -26,7 +26,7 @@
           %td
             :erb
               <div jw-action showurl=<%= customer_path(customer) %>> </div>
-            
+
   .pagination
     = smart_listing.paginate
     = smart_listing.pagination_per_page_links

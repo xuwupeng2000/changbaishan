@@ -26,6 +26,7 @@
 //= require restangular/dist/restangular
 //= require angular-rails-templates
 //= require angularjs-toaster/toaster
+//= require ng-grid/ng-grid-2.0.14.min
 //= require_tree ./modules
 //= require ./angular_modules/hua_yue_ye_base
 //= require_tree ./angular_modules/templates

@@ -23,8 +23,7 @@
           %td= user.id
           %td.is-state= user.state
           %td
-            :erb
-              <div jw-action showurl=<%= admin_user_path(user) %>> </div>
+            = link_to 'Detail', admin_user_path(user), class: 'jw-action'
           %td
             - if user.disabled?
               = link_to 'Enable', enable_admin_user_path(user), method: :put, class: 'jw-action'

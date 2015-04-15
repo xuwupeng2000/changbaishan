@@ -31,8 +31,7 @@
           %td.is-boolean= prod.is_public
           %td.is-state= prod.state
           %td
-            :erb
-              <div jw-action editurl=<%= edit_admin_product_path(prod) %>> </div>
+            = link_to 'Edit', edit_admin_product_path(prod), class: 'jw-action'
           %td
             - if prod.archived?
               = link_to 'Activate', activate_admin_product_path(prod), method: :put, class: 'jw-action'
