@@ -23,19 +23,13 @@
           %td= user.id
           %td.is-state= user.state
           %td
-            %a.btn.btn-primary{:type => 'button', :'data-toggle' => 'modal', 'data-target' => "#modal-edit-user-#{user.id}"}
-              Edit
-          %td
-            = link_to 'Detail', admin_user_path(user), class: 'btn btn-primary'
-
-            %div{ id: "container-edit-user-#{user.id}" }
-              = render partial: "admin/users/modals/edit_user", locals: {user: user}
-
+            :erb
+              <div jw-action showurl=<%= admin_user_path(user) %>> </div>
           %td
             - if user.disabled?
-              = link_to 'Enable', enable_admin_user_path(user), method: :put, class: 'btn btn-primary'
+              = link_to 'Enable', enable_admin_user_path(user), method: :put, class: 'jw-action'
             - else
-              = link_to 'Disable', disable_admin_user_path(user), method: :put, class: 'btn btn-primary'
+              = link_to 'Disable', disable_admin_user_path(user), method: :put, class: 'jw-action'
 
 
 

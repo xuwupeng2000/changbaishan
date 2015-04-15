@@ -6,9 +6,10 @@ angular.module('ye').directive('jwAction', [() ->
     link: (scope, element, attrs) ->
       scope.actionActive = false
 
-      scope.showurl   = attrs.showurl
-      scope.editurl   = attrs.editurl
-      scope.deleteurl = attrs.deleteurl
+      scope.showurl            = attrs.showurl
+      scope.editurl            = attrs.editurl
+      scope.deleteurl          = attrs.deleteurl
+      scope.deleteconfirmation = attrs.deleteconfirmation
 
       scope.toggleActionCollection = (nextState) ->
         scope.actionActive = nextState

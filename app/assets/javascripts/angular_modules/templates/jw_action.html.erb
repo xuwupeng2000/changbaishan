@@ -1,38 +1,38 @@
 <div class="">
 
   <div ng-switch='actionActive'>
-    <a class='jw-actions' ng-switch-when='false' ng-click='toggleActionCollection(true)'>
+    <a class='jw-actions-trigger' ng-switch-when='false' ng-click='toggleActionCollection(true)'>
       <i class="fa fa-cubes"></i>
       Actions
     </a>
 
-    <ul ng-switch-when='true' class='jw-actions'>
-      <li ng-show='showurl' class='jw-action'>
+    <div ng-switch-when='true' class='jw-actions'>
+      <span ng-show='showurl' class='jw-action'>
         <a ng-href="{{ showurl }}">
-          <i class="fa fa-cube"></i>
-          Show
+          <i class="fa fa-eye"></i>
+          Detail
         </a>
-      </li>
+      </span>
 
-      <li ng-show='editurl' class='jw-action'>
+      <span ng-show='editurl' class='jw-action'>
         <a ng-href="{{ editurl }}">
-          <i class="fa fa-cube"></i>
-          Edit
+          <i class="fa fa-pencil-square-o"></i>
+          Detail
         </a>
-      </li>
+      </span>
 
-      <li ng-show='deleteurl' class='jw-action'>
-        <a ng-href="{{ deleteurl }}">
-          <i class="fa fa-cube"></i>
-          Remove
+      <span ng-show='deleteurl' class='jw-action'>
+        <a ng-href="{{ deleteurl }}" data-method="delete" data-confirm="{{ deleteconfirmation }}">
+          <i class="fa fa-trash-o"></i>
+          Delete
         </a>
-      </li>
+      </span>
 
-      <li ng-click='toggleActionCollection(false)'>
-        <i class="fa fa-times-circle"></i>
-      </li>
+      <span ng-click='toggleActionCollection(false)'>
+        <a> <i class="fa fa-times jw-action-cross"></i> </a>
+      </span>
 
-    <ul>
+    <div>
   </div>
 
 </div>

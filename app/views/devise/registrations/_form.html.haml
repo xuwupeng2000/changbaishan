@@ -2,18 +2,18 @@
   = f.error_notification
 
   .col-lg-12
-    = f.input :email, required: true
+    = f.input :email, required: true, input_html: { tabindex: 1 }
 
   .col-lg-6.pull-left
-    = f.input :first_name, autofocus: true, required: true
-    = f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false
+    = f.input :first_name, autofocus: true, required: true, input_html: { tabindex: 2 }
+    = f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false,  input_html: { tabindex: 4 }
 
   .col-lg-6.pull-right
-    = f.input :last_name, required: true
-    = f.input :password_confirmation, required: false
+    = f.input :last_name, required: true,  input_html: { tabindex: 3 }
+    = f.input :password_confirmation, required: false, input_html: { tabindex: 5 }
 
   .col-lg-12
-    = f.input :current_password, hint: "we need your current password to confirm your changes", required: true
+    = f.input :current_password, hint: "we need your current password to confirm your changes", required: true, input_html: { tabindex: 6 }
 
   .col-lg-12
     .form-actions
