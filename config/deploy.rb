@@ -12,7 +12,7 @@ set :branch, ENV["branch"]
 set :deploy_to, '/home/deploy/changbaishan'
 
 # Default value for :scm is :git
-set :scm, :git
+set :scm, :gitcopy
 
 # Default value for :format is :pretty
 # set :format, :pretty

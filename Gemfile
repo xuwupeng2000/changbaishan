@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 gem 'unicorn'
 gem 'rails', '4.1.9'
-gem 'pg'
 gem 'thin'
 
 # JSON
@@ -70,5 +69,5 @@ group :development, :test do
   gem "rails-erd"
   gem "bullet"
   gem 'foreman'
-  gem 'capistrano-rvm'
+  gem 'capistrano-scm-gitcopy', '0.1.3'
 end
